@@ -14,12 +14,18 @@
 
   .main-contents-pickup{
     padding-top: 40px;
-    a{
-      text-decoration: none;
-      h3{
-        font-size: 22px;
-        color: $link_blue;
+    .pickup-category-items-container{
+      margin-right: 10%;
+      margin-left: 10%;
+      a{
         text-decoration: none;
+        h3{
+          margin: 26px 11px;
+          font-size: 22px;
+          color: $link_blue;
+          text-decoration: none;
+          text-align: center;
+        }
       }
     }
   }
