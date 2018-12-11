@@ -4,7 +4,7 @@
     when you add slide show here, plz remove 'border: solid;' from /stylesheets/modules/_index.scss.
     %br
     and also erase this message from /views/items/_index.html.haml.
-  .main-contents-pickup
+  .main-contents-pickup-category
     %h2
       ピックアップカテゴリー
     .pickup-category-items-container
@@ -12,3 +12,12 @@
         %a{href: ''}
           %h3
             メンズ 新着アイテム
+  .main-contents-pickup-brand
+    %h2
+      ピックアップブランド
+    .pickup-brand-items-container
+      .pickup-brand-name
+        %a{href: ''}
+          %h3
+            ナイキ 新着アイテム
+= render 'layouts/footer'

@@ -2,19 +2,39 @@
   color: $black;
   background-color: $light_gray;
 
-  h2{
-    font-size: 28px;
-    text-align: center;
-  }
-
   .slideshow{
     height: 391px;
     border: solid;
   }
 
-  .main-contents-pickup{
+  .main-contents-pickup-category{
     padding-top: 40px;
+      h2{
+    font-size: 28px;
+    text-align: center;
+  }
     .pickup-category-items-container{
+      margin-right: 10%;
+      margin-left: 10%;
+      a{
+        text-decoration: none;
+        h3{
+          margin: 26px 11px;
+          font-size: 22px;
+          color: $link_blue;
+          text-decoration: none;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .main-contents-pickup-brand{
+    padding-top: 40px;
+      h2{
+    font-size: 28px;
+    text-align: center;
+  }
+    .pickup-brand-items-container{
       margin-right: 10%;
       margin-left: 10%;
       a{
