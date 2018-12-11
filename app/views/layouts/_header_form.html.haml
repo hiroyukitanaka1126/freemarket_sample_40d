@@ -1,0 +1,23 @@
+%header.header-form
+  .header-form__inner
+    .inner-search-bar
+      .inner-search-bar__left
+        .logo
+          = link_to image_tag('mercari_logo.png', alt: 'mercari', width: '134', height: '36'), root_path
+      .inner-search-bar__right
+        %input{type: "search", placeholder: 'キーワードから探す'}
+    .inner-nav-bar
+      .nav-left
+        %ul
+          %li
+            カテゴリーから探す
+          %li
+            ブランドから探す
+      .nav-right
+        %ul.user-nav
+          %li
+            マイページ
+          %li
+            お知らせ
+          %li
+            やることリスト
