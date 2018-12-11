@@ -38,21 +38,21 @@
 - belongs_to :buyer, class_name: "User"
 - has_many :favorites
 
-# main_categories table
+# categories table
 
 |column|type|options|
 |------|----|-------|
 
 ## Association
 
-# second_categories table
+# genres table
 
 |column|type|options|
 |------|----|-------|
 
 ## Association
 
-# third_categories table
+# details table
 
 |column|type|options|
 |------|----|-------|
@@ -71,5 +71,3 @@
 - belongs_to :item
 
 --------------------------
-
-I have no clue how to associate three category models (main, second and third).
