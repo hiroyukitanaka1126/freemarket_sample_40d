@@ -1,0 +1,30 @@
+#sell-btn{
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  background: $mercari_red;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+
+  #sell{
+    display: block;
+    margin-top: 32px;
+    vertical-align: middle;
+    font-size: 22px;
+    color: $white;
+  }
+
+  i{
+    display: block;
+    color: $white;
+    text-align: center;
+    line-height: 70px;
+    vertical-align: middle;
+    font-size: 59px;
+    font-style: none;
+  }
+}
