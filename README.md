@@ -28,9 +28,9 @@
 |buyer_id|integer|null: false|
 |shipping_cost|integer||
 |shipping_date|integer||
-|main_category_id|integer|references: main_category, foreign_key: true|
-|second_category_id|integer|references: second_category, foreign_key: true|
-|third_category_id|integer|references: third_category, foreign_key: true|
+|category_id|integer|references: category, foreign_key: true, null: false|
+|genre_id|integer|references: genre, foreign_key: true|
+|detail_id|integer|references: detail, foreign_key: true|
 
 ## Association
 - belongs_to :user
@@ -71,4 +71,7 @@
 - belongs_to :item
 
 --------------------------
+<<<<<<< HEAD
 
+=======
+>>>>>>> master

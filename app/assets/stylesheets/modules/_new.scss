@@ -1,0 +1,19 @@
+body{
+  background-color: $light_gray;
+}
+
+.header{
+  height: 128px;
+  text-align: center;
+
+  h1{
+    margin-top: 40px;
+  }
+}
+.main{
+  display: block;
+  .main-sellitem-container{
+    width: 700px;
+    background-color: $white;
+  }
+}
