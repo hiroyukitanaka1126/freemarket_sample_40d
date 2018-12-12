@@ -1,0 +1,19 @@
+.app-banner
+  .app-banner__inner
+    .app-banner__inner-msg
+      %h2
+        スマホでかんたんフリマアプリ
+      %p
+        今すぐ無料でダウンロード!
+      .inner-msg__banners
+        .inner-msg__banners-icon
+          = image_tag('mercari_icon.png', width: '68', height: '68')
+        %ul
+          %li
+            = link_to image_tag('app-store.svg', width: '133', height: '68'), 'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8'
+          %li
+            = link_to image_tag('google-play.svg', width: '133', height: '68'), 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja'
+    .inner-msg__image
+      = image_tag('phone_pic.png', width: '300', height: '262')
+.footer
+/footerの表示範囲がウィンドウサイズによって変わるが実装方法がわからないのでとりあえずheight: 260pxで仮置き/
