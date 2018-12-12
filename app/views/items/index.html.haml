@@ -1,0 +1,24 @@
+= render 'layouts/header_form'
+.main-contents
+  .slideshow
+    when you add slide show here, plz remove 'border: solid;' from /stylesheets/modules/_index.scss.
+    %br
+    and also erase this message from /views/items/_index.html.haml.
+  .main-contents-pickup-category
+    %h2
+      ピックアップカテゴリー
+    .pickup-category-items-container
+      .pickup-category-name
+        %a{href: ''}
+          %h3
+            メンズ 新着アイテム
+  .main-contents-pickup-brand
+    %h2
+      ピックアップブランド
+    .pickup-brand-items-container
+      .pickup-brand-name
+        %a{href: ''}
+          %h3
+            ナイキ 新着アイテム
+= render 'layouts/sell_btn'
+= render 'layouts/footer'
