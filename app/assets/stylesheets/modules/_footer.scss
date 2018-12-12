@@ -1,0 +1,58 @@
+.app-banner{
+  height: 260px;
+  background: url('banner.jpg');
+  background-size: 100%;
+  background-position: center;
+  display: block;
+
+  .app-banner__inner{
+    overflow: hidden;
+    position: relative;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+
+    .app-banner__inner-msg{
+      position: absolute;
+      top: 10%;
+      h2{
+        font-size: 24px;
+        color: $white;
+        margin: 0;
+      }
+      p{
+        font-size: 35px;
+        margin: 10px 0 0;
+        color: $white;
+      }
+
+      .inner-msg__banners{
+        display: block;
+        .inner-msg__banners-icon{
+          display: block;
+          margin: 0;
+          float: left;
+          width: 68px;
+          height: 68px;
+        }
+        ul{
+          list-style: none;
+          li{
+            display: inline-block;
+            margin-left: 8px;
+          }
+        }
+      }
+      }
+      .inner-msg__image{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+  }
+}
+.footer{
+  background-color: $black;
+  height: 260px;
+}

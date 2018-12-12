@@ -28,9 +28,9 @@
 |buyer_id|integer|null: false|
 |shipping_cost|integer||
 |shipping_date|integer||
-|main_category_id|integer|references: main_category, foreign_key: true|
-|second_category_id|integer|references: second_category, foreign_key: true|
-|third_category_id|integer|references: third_category, foreign_key: true|
+|category_id|integer|references: category, foreign_key: true, null: false|
+|genre_id|integer|references: genre, foreign_key: true|
+|detail_id|integer|references: detail, foreign_key: true|
 
 ## Association
 - belongs_to :user
@@ -38,21 +38,21 @@
 - belongs_to :buyer, class_name: "User"
 - has_many :favorites
 
-# main_categories table
+# categories table
 
 |column|type|options|
 |------|----|-------|
 
 ## Association
 
-# second_categories table
+# genres table
 
 |column|type|options|
 |------|----|-------|
 
 ## Association
 
-# third_categories table
+# details table
 
 |column|type|options|
 |------|----|-------|
@@ -71,5 +71,7 @@
 - belongs_to :item
 
 --------------------------
+<<<<<<< HEAD
 
-I have no clue how to associate three category models (main, second and third).
+=======
+>>>>>>> master
