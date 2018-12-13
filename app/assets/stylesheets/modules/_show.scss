@@ -74,17 +74,24 @@
     font-size: 16px;
   }
 }
-.item-buy-btn{
-  background: $mercari_red;
-  color: $white;
+.item-buy-container{
+  padding: 32px 20px 0;
+  background: $white;
   margin: auto;
-  text-align: center;
-  font-weight: 600;
-  font-size: 24px;
-  display: block;
-  height: 56px;
-  width: 780px;
-  border: 1px solid $mercari_red;
+  width: 740px;
+
+  .item-buy-btn{
+    background: $mercari_red;
+    color: $white;
+    margin: auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    display: block;
+    height: 56px;
+    width: 740px;
+    border: 1px solid $mercari_red;
+  }
 }
 .item-description-container{
   padding: 32px 20px 0;
