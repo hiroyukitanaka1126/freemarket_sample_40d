@@ -1,0 +1,55 @@
+= render 'layouts/header_form'
+= render 'layouts/bread_crumbs'
+.wrapper
+  .item-box-container
+    %h1.item-name
+      商品の名前
+    .item-main-content
+      .item-photo
+        商品の写真
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th 出品者
+            %td 出品者名
+          %tr
+            %th カテゴリー
+            %td カテゴリー名
+          %tr
+            %th ブランド
+            %td ブランド名
+          %tr
+            %th 商品サイズ
+            %td S, M or L
+          %tr
+            %th 商品の状態
+            %td 商品の状態
+          %tr
+            %th 配送料の負担
+            %td 込み/抜き
+          %tr
+            %th 配送の方法
+            %td 配送方法
+          %tr
+            %th 配送元地域
+            %td 配送元地域
+          %tr
+            %th 発送日の目安
+            %td 1-2/2-3/4-7
+  .item-price-container
+    %span.item-price ¥ 8,500
+    %span.item-tax (税込)
+    %span.item-shipping-fee 送料込み
+  %button.item-buy-btn 購入画面に進む
+  .item-description-container
+    %p.item-description-inner
+      ここに商品の説明文ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ改行テストあああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+  .items-in-user-profile-container
+    %h2
+      = link_to '<ここに出品者の名前>さんのその他の出品'
+    renderで貼り付け
+  .items-in-category-container
+    %h2
+      =link_to '<ここに同じカテゴリー名> その他の商品'
+    renderで貼り付け
+= render 'layouts/footer'

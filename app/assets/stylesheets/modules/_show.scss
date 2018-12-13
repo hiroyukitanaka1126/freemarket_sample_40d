@@ -1,0 +1,115 @@
+.wrapper{
+  display: block;
+  background: $light_gray;
+  padding-top: 40px;
+}
+.item-box-container{
+  width: 700px;
+  padding: 24px 40px 40px;
+  margin: auto;
+  display: block;
+  background: $white;
+
+  .item-name{
+    font-size: 24px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4;
+    min-width: 700px;
+    min-height: 66px;
+  }
+  .item-main-content{
+    margin: 16px 0 0;
+    display: flex;
+
+    .item-photo{
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 375px;
+      border: 1px solid;
+    }
+    .item-detail-table{
+      max-width: 300px;
+      min-width: 300px;
+      height: 375px;
+      border: 1px solid $light_gray;
+      border-collapse: collapse;
+      margin-left: 100px;
+
+      tr{
+        border: 1px solid $light_gray;
+
+        th{
+          width: 39%;
+          border: 1px solid $light_gray;
+          background: #fafafa;
+          padding: 8px;
+          font-size: 14px;
+          font-weight: 8;
+          text-align: left;
+        }
+        td{
+          color: $link_blue;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.item-price-container{
+  padding: 24px 40px 40px;
+  margin: auto;
+  width: 700px;
+  text-align: center;
+  background: $white;
+  .item-price{
+    margin: 0 16px 0 0;
+    font-size: 45px;
+    font-weight: 550;
+  }
+  .item-tax{
+    font-size: 10px;
+  }
+  .item-shipping-fee{
+    font-size: 16px;
+  }
+}
+.item-buy-btn{
+  background: $mercari_red;
+  color: $white;
+  margin: auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  display: block;
+  height: 56px;
+  width: 780px;
+  border: 1px solid $mercari_red;
+}
+.item-description-container{
+  padding: 32px 20px 0;
+  background: $white;
+  margin: auto;
+  width: 740px;
+}
+.items-in-user-profile-container{
+  width: 700px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  h2 a{
+    text-decoration: none;
+    color: $link_blue;
+    }
+  }
+.items-in-category-container{
+  width: 700px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  h2 a{
+    text-decoration: none;
+    color: $link_blue;
+  }
+}
+
