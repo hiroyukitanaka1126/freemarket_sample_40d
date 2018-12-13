@@ -1,19 +1,185 @@
-body{
-  background-color: $light_gray;
-}
+.sub-head{
+          float: left;
+          font-size: 14px;
+          color: #888;
+        }
 
-.header{
-  height: 128px;
-  text-align: center;
+.form-require{
+            font-size: 12px;
+            color: $white;
+            background-color: $mercari_red;
+            border-radius: 2px;
+            padding: 2px 4px;
+            display: inline-block;
+          }
 
-  h1{
-    margin-top: 40px;
-  }
-}
-.main{
+select{
   display: block;
-  .main-sellitem-container{
+  height: 48px;
+  width: 100%;
+  }
+
+.wrapper{
+  padding-bottom: 220px;
+  background-color: $light_gray;
+  header{
+    height: 128px;
+    text-align: center;
+
+    h1{
+      margin: 40px 0 0;
+      display: inline-block;
+    }
+  }
+  .main{
+    display: block;
     width: 700px;
-    background-color: $white;
+    margin: 0 auto;
+
+    .sell-container{
+      background-color: $white;
+
+      .sell-container__header{
+        text-align: center;
+        padding: 32px 16px;
+        font-size: 22px;
+        border-bottom: 1px solid #eee;
+        margin: 0px;
+      }
+      .sell-upload-box{
+        width: 620px;
+        padding: 40px;
+        border-bottom: 1px solid #eee;
+
+        .sell-upload-head{
+          font-size: 16px;
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+          display: inline-block;
+        }
+
+        .file-field{
+          width: 620px;
+          height: 184px;
+          background-color: $light_gray;
+          margin-top: 20px;
+          border: 1px dashed #d8d8d8;
+          text-align: center;
+          line-height: 184px;
+        }
+      }
+      .sell-item-description{
+        padding: 40px;
+        border-bottom: 1px solid #ccc;
+
+        .sell-item-description__name{
+          font-size: 16px;
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+          display: inline-block;
+        }
+
+        .item-name{
+          display: block;
+          width: 620px;
+          height: 48px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-top: 8px;
+          font-size: 16px;
+        }
+        .sell-item-description__main{
+          font-size: 16px;
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+          display: inline-block;
+          margin-top: 40px;
+        }
+        .description{
+          display: block;
+          width: 100%;
+          min-height: 104px;
+          margin-top: 8px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+        }
+      }
+      .sell-item-details{
+        padding: 40px;
+        min-height: 180px;
+        border-bottom: 1px solid #ccc;
+
+        .details-box{
+          float: right;
+          width: 400px;
+          .details-category{
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+          }
+
+          .details-status{
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+          }
+        }
+      }
+      .sell-items-shipping{
+        padding: 40px;
+        min-height: 370px;
+        border-bottom: 1px solid #ccc;
+
+        .shipping-box{
+          float: right;
+          width: 400px;
+
+          .shipping-cost{
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+          }
+        }
+      }
+      .sell-items-price{
+        padding: 40px;
+        min-height: 300px;
+        border-bottom: 1px solid #ccc;
+
+        .price-box{
+          float: right;
+          width: 400px;
+          .price{
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+          }
+        }
+      }
+      .sell-items-btn{
+        padding: 40px;
+        text-align: center;
+        .sell_btn{
+          width: 620px;
+          min-height: 50px;
+          color: $white;
+          background-color: $mercari_red;
+          font-size: 14px;
+          border: 1px solid $mercari_red;
+        }
+        .return{
+          width: 45%;
+          color: $white;
+          background-color: #aaa;
+          margin: 24px;
+          min-height: 48px;
+          font-size: 14px;
+          border: 1px solid #aaa;
+        }
+      }
+    }
   }
 }

@@ -1,5 +1,74 @@
-.header
-  %h1
-    = link_to image_tag('mercari_logo.svg', alt: 'mercari', width: '185', height: '49'), root_path
-.main
-  .main-sell-item-container
+.wrapper
+  %header
+    %h1
+      = link_to image_tag('mercari_logo.svg', alt: 'mercari', width: '185', height: '49'), root_path
+  .main
+    .main-sell-item-container
+      .sell-container
+        %h2.sell-container__header
+          商品の情報を入力
+        %form.sell-form
+          .sell-upload-box
+            %h3.sell-upload-head
+              出品画像
+            %span.form-require
+              必須
+            .file-field
+              クリックしてファイルをアップロード
+          .sell-item-description
+            %h3.sell-item-description__name
+              商品名
+            %span.form-require
+              必須
+            %input.item-name
+            %h3.sell-item-description__main
+              商品の説明
+            %span.form-require
+              必須
+            %textarea.description
+          .sell-item-details
+            %h3.sub-head
+              商品の詳細
+            .details-box
+              %h3.details-category
+                カテゴリー
+              %span.form-require
+                必須
+              %select
+              %h3.details-status
+                商品の状態
+              %span.form-require
+                必須
+              %select
+          .sell-items-shipping
+            %h3.sub-head
+              配送について
+            .shipping-box
+              %h3.shipping-cost
+                配送料の負担
+              %span.form-require
+                必須
+              %select
+              %h3.shipping-cost
+                発送元の地域
+              %span.form-require
+                必須
+              %select
+              %h3.shipping-cost
+                発送までの日数
+              %span.form-require
+                必須
+              %select
+          .sell-items-price
+            %h3.sub-head
+              販売価格(300~9,999,999)
+            .price-box
+              %h3.price
+                価格
+              %span.form-require
+                必須
+          .sell-items-btn
+            %button{type: 'submit', class: 'sell_btn'}
+              出品する
+            %button{class: 'return'}
+              もどる
