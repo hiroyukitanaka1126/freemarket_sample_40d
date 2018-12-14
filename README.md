@@ -16,7 +16,9 @@
 |profile_text|text||
 
 ## Association
-
+- has_many :prefectures
+- has_many :sale_proceeds
+-  has_many :points
 
 
 # municipalities table
@@ -27,6 +29,7 @@
 |building|string||
 
 ## Association
+- belongs_to :prefecture
 
 
 # prefectures table
@@ -36,6 +39,8 @@
 |municipality_id|integer|null: false|
 
 ## Association
+- belongs_to :user
+- belongs_to :item
 
 # sale_proceeds table
 |column|type|options|
@@ -43,12 +48,16 @@
 |sale_proceed|integer||
 
 ## Association
+- belongs_to :user
+- belongs_to :item
 
 # points table
 |column|type|options|
 |------|----|-------|
 |point|integer||
 
+## Association
+- belongs_to :user
 
 # likes table
 |column|type|options|
@@ -57,6 +66,8 @@
 |item_id|integer|null: false|
 
 ## Association
+- belongs_to :item, counter_cache: :likes_count
+- belongs_to :user
 
 # items table
 |column|type|options|
@@ -76,13 +87,26 @@
 |comment_id|integer|null: false|
 |buyer_id|integer|null: false|
 |seller_id|integer|null: false|
+|likes_count|integer||
 
 ## Association
+- has_many :likes
+- has_many :delivery_fee
+- has_many :delivery_date
+- has_many :delivery
+- has_many :sale_proceeds
+- has_many :prefectures
+- has_many :categories
+- has_many :brands
+- has_many :sises
+- has_many :states
+- has_many :images
 
 # images table
 |column|type|options|
 |------|----|-------|
 |item_id|integer|null: false|
+- belongs_to :item
 
 # delivery_fee table
 |column|type|options|
@@ -90,16 +114,23 @@
 |||
 
 ## Association
+- belongs_to :item
 
 # delivery_date table
 |column|type|options|
 |------|----|-------|
 |date|string|null: false|
 
+## Association
+- belongs_to :item
+
 # delivery table
 |column|type|options|
 |------|----|-------|
 |method|string|null: false|
+
+## Association
+- belongs_to :item
 
 
 # categories table
@@ -110,6 +141,7 @@
 |parent_id|integer|null: false|
 
 ## Association
+- belongs_to :item
 
 # brands table
 |column|type|options|
@@ -117,6 +149,7 @@
 |name|string||
 
 ## Association
+- belongs_to :item
 
 # sizes table
 |column|type|options|
@@ -124,6 +157,7 @@
 |size|string|null: false|
 
 ## Association
+- belongs_to :item
 
 # statuses table
 |column|type|options|
@@ -131,9 +165,12 @@
 |status|string|null: false|
 
 ## Association
+- belongs_to :item
 
 # comments table
 |column|type|options|
 |------|----|-------|
 |text|text||
 
+## Association
+- belongs_to :item
