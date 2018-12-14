@@ -54,11 +54,11 @@
 |column|type|options|
 |------|----|-------|
 |user_id|integer|null: false|
-|goods_id|integer|null: false|
+|item_id|integer|null: false|
 
 ## Association
 
-# goods table
+# items table
 |column|type|options|
 |------|----|-------|
 |name|string|null: false|
@@ -78,6 +78,11 @@
 |seller_id|integer|null: false|
 
 ## Association
+
+# images table
+|column|type|options|
+|------|----|-------|
+|item_id|integer|null: false|
 
 # delivery_fee table
 |column|type|options|
