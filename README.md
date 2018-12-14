@@ -1,77 +1,134 @@
 # users table
-
 |column|type|options|
 |------|----|-------|
-|family_name|string||
-|first_name|string||
-|nickname|string|null: false, unique: true|
-|email|string|null:false, unique: true|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
 |password|integer|null: false, unique: true|
-|card_number|integer|null: false, unique: true|
-|phone_number|integer|null: false, unique: true|
-|address|integer|null: false||
+|phone_number|integer|null:false, unique: true|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|postal-code|integer|null: false|
+|prefecture|string|null: false||
+|birthday|integer|null: false|
+|sale_proceed_id|integer||
+|point_id|integer||
+|payment_method|string|null: false|
+|profile_text|text||
 
 ## Association
-- has_many :items
-- has_many :favorites
 
 
-# items table
 
+# municipalities table
 |column|type|options|
 |------|----|-------|
 |name|string|null: false|
-|image|string|null: false|
-|description|text|null: false|
-|price|integer|null: false|
-|seller_id|integer|null: false
-|buyer_id|integer|null: false|
-|shipping_cost|integer||
-|shipping_date|integer||
-|category_id|integer|references: category, foreign_key: true, null: false|
-|genre_id|integer|references: genre, foreign_key: true|
-|detail_id|integer|references: detail, foreign_key: true|
+|address|string|null: false|
+|building|string||
 
 ## Association
-- belongs_to :user
-- belongs_to :seller, class_name: "User"
-- belongs_to :buyer, class_name: "User"
-- has_many :favorites
+
+
+# prefectures table
+|column|type|options|
+|------|----|-------|
+|name|string|null: false|
+|municipality_id|integer|null: false|
+
+## Association
+
+# sale_proceeds table
+|column|type|options|
+|------|----|-------|
+|sale_proceed|integer||
+
+## Association
+
+# points table
+|column|type|options|
+|------|----|-------|
+|point|integer||
+
+
+# likes table
+|column|type|options|
+|------|----|-------|
+|user_id|integer|null: false|
+|goods_id|integer|null: false|
+
+## Association
+
+# goods table
+|column|type|options|
+|------|----|-------|
+|name|string|null: false|
+|description|text|null: false|
+|price|string|null: false|
+|category_id|integer|null: false|
+|brand_id|integer|null: false|
+|size_id|integer|null: false|
+|status_id|integer|null: false|
+|delivery_fee_id|integer|null: false|
+|delivery_date_id|integer|null: false|
+|derivery_id|integer|null: false|
+|prefecture_id|integer|null: false|
+|sale_proceeds|integer|null: false|
+|comment_id|integer|null: false|
+|buyer_id|integer|null: false|
+|seller_id|integer|null: false|
+
+## Association
+
+# delivery_fee table
+|column|type|options|
+|------|----|-------|
+|||
+
+## Association
+
+# delivery_date table
+|column|type|options|
+|------|----|-------|
+|date|string|null: false|
+
+# delivery table
+|column|type|options|
+|------|----|-------|
+|method|string|null: false|
+
 
 # categories table
 
 |column|type|options|
 |------|----|-------|
+|name|string|null: false|
+|parent_id|integer|null: false|
 
 ## Association
 
-# genres table
-
+# brands table
 |column|type|options|
 |------|----|-------|
+|name|string||
 
 ## Association
 
-# details table
-
+# sizes table
 |column|type|options|
 |------|----|-------|
+|size|string|null: false|
 
 ## Association
 
-# favorites table
-
+# statuses table
 |column|type|options|
 |------|----|-------|
-|user_id|integer|references: user, foreign_key: true|
-|item_id|integer|references: item, foreign_key: true|
+|status|string|null: false|
 
 ## Association
-- belongs_to :user
-- belongs_to :item
 
---------------------------
-<<<<<<< HEAD
+# comments table
+|column|type|options|
+|------|----|-------|
+|text|text||
 
-=======
->>>>>>> master
