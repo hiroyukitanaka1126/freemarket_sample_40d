@@ -101,6 +101,8 @@
 - has_many :sises
 - has_many :states
 - has_many :images
+- belongs_to :seller, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 # images table
 |column|type|options|
@@ -142,6 +144,8 @@
 
 ## Association
 - belongs_to :item
+- belongs_to :parent, class_name: :Category
+- has_many :children, class_name: :Category, foreign_key: :parent_id
 
 # brands table
 |column|type|options|
