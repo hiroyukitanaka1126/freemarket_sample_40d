@@ -72,11 +72,11 @@
 # items table
 |column|type|options|
 |------|----|-------|
-|name|string|null: false, add_index :items|
+|name|string|null: false, index: true|
 |description|text|null: false|
 |price|string|null: false|
-|category_id|integer|null: false, add_index :items|
-|brand_id|integer|null: false, add_index :items|
+|category_id|integer|null: false, index: true|
+|brand_id|integer|null: false, index: true|
 |size_id|integer|null: false|
 |status_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
@@ -139,7 +139,7 @@
 
 |column|type|options|
 |------|----|-------|
-|name|string|null: false, add_index :categories|
+|name|string|null: false, index: true|
 |parent_id|integer|null: false|
 
 ## Association
@@ -150,7 +150,7 @@
 # brands table
 |column|type|options|
 |------|----|-------|
-|name|string|add_index, brands|
+|name|string|index: true|
 
 ## Association
 - belongs_to :item
