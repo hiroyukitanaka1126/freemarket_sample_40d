@@ -7,11 +7,8 @@
 |phone_number|integer|null:false, unique: true|
 |first_name|string|null: false|
 |last_name|string|null: false|
-|postal-code|integer|null: false|
-|prefecture|string|null: false||
+|postal_code|integer|null: false|
 |birthday|integer|null: false|
-|sale_proceed_id|integer||
-|point_id|integer||
 |payment_method|string|null: false|
 |profile_text|text||
 
@@ -19,6 +16,7 @@
 - has_many :prefectures
 - has_many :sale_proceeds
 - has_many :points
+- has_many :comments
 
 
 # municipalities table
@@ -27,6 +25,7 @@
 |name|string|null: false|
 |address|string|null: false|
 |building|string||
+|prefecture_id|integer|references :prefecture, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :prefecture
@@ -36,16 +35,20 @@
 |column|type|options|
 |------|----|-------|
 |name|string|null: false|
-|municipality_id|integer|null: false|
+|user_id|integer|references :user, foreign_key: true, null: false|
+|item_id|integer|references :item, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :user
 - belongs_to :item
+- has_many :municipalities
 
 # sale_proceeds table
 |column|type|options|
 |------|----|-------|
 |sale_proceed|integer||
+|user_id|integer|references :user, foreign_key: true, null: false|
+|item_id|integer|references :item, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :user
@@ -55,6 +58,7 @@
 |column|type|options|
 |------|----|-------|
 |point|integer||
+|user_id|integer|references :user, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :user
@@ -62,8 +66,8 @@
 # likes table
 |column|type|options|
 |------|----|-------|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
+|user_id|integer|references :user, foreign_key: true, null: false|
+|item_id|integer|references :item, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :item, counter_cache: :likes_count
@@ -75,16 +79,7 @@
 |name|string|null: false, index: true|
 |description|text|null: false|
 |price|string|null: false|
-|category_id|integer|null: false, index: true|
-|brand_id|integer|null: false, index: true|
-|size_id|integer|null: false|
-|status_id|integer|null: false|
-|delivery_fee_id|integer|null: false|
-|delivery_date_id|integer|null: false|
-|derivery_id|integer|null: false|
-|prefecture_id|integer|null: false|
-|sale_proceeds|integer|null: false|
-|comment_id|integer|null: false|
+|sale_proceed|integer|references :sale_proceed, foreign_key: true, null: false|
 |buyer_id|integer|null: false|
 |seller_id|integer|null: false|
 |likes_count|integer||
@@ -107,13 +102,16 @@
 # images table
 |column|type|options|
 |------|----|-------|
-|item_id|integer|null: false|
+|item_id|integer|references :item, foreign_key: true, null: false|
+
+## Association
 - belongs_to :item
 
 # delivery_fee table
 |column|type|options|
 |------|----|-------|
-|||
+|delivery_fee|integer||
+|item_id|integer|references :item, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :item
@@ -122,6 +120,7 @@
 |column|type|options|
 |------|----|-------|
 |date|string|null: false|
+|item_id|integer|references :item, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :item
@@ -130,6 +129,7 @@
 |column|type|options|
 |------|----|-------|
 |method|string|null: false|
+|item_id|integer|references :item, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :item
@@ -140,7 +140,8 @@
 |column|type|options|
 |------|----|-------|
 |name|string|null: false, index: true|
-|parent_id|integer|null: false|
+|parent_id|integer|null: false, foreign_key: true, index: true|
+|item_id|integer|null: false, foreign_key: true, index: true|
 
 ## Association
 - belongs_to :item
@@ -151,6 +152,7 @@
 |column|type|options|
 |------|----|-------|
 |name|string|index: true|
+|item_id|integer|references :item, foreign_key: true, index: true|
 
 ## Association
 - belongs_to :item
@@ -159,6 +161,7 @@
 |column|type|options|
 |------|----|-------|
 |size|string|null: false|
+|item_id|integer|references :item, foreign_key: true, null :false|
 
 ## Association
 - belongs_to :item
@@ -167,6 +170,7 @@
 |column|type|options|
 |------|----|-------|
 |status|string|null: false|
+|item_id|integer|references :item, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :item
@@ -175,6 +179,9 @@
 |column|type|options|
 |------|----|-------|
 |text|text||
+|item_id|integer|references :item, foreign_key: true, null: false|
+|user_id|integer|references :user, foreign_key: true, null: false|
 
 ## Association
 - belongs_to :item
+- belongs_to :user
