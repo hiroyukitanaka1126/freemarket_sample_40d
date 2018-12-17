@@ -8,7 +8,7 @@
 |first_name|string|null: false|
 |last_name|string|null: false|
 |postal_code|integer|null: false|
-|birthday|integer|null: false|
+|birthday|date|null: false|
 |payment_method|string|null: false|
 |profile_text|text||
 
@@ -82,6 +82,7 @@
 |name|string|null: false, index: true|
 |description|text|null: false|
 |price|string|null: false|
+|status|string|null: false|
 |sale_proceed|references :sale_proceed|foreign_key: true, null: false|
 |likes_count|integer||
 
@@ -95,7 +96,6 @@
 - has_many :categories
 - has_many :brands
 - has_many :sizes
-- has_many :statuses
 - has_many :images
 - has_many :deals
 - has_many :sellers, through: :deals
@@ -106,6 +106,8 @@
 - has_many :items_of_buyer, through: :deals_of_buyer, source: "item"
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
+- belongs_to :brand
+- belongs_to :delivery
 
 # deals table
 |column|type|options|
@@ -127,7 +129,7 @@
 ## Association
 - belongs_to :item
 
-# delivery_fee table
+# delivery_fees table
 |column|type|options|
 |------|----|-------|
 |delivery_fee|integer||
@@ -136,7 +138,7 @@
 ## Association
 - belongs_to :item
 
-# delivery_date table
+# delivery_dates table
 |column|type|options|
 |------|----|-------|
 |date|string|null: false|
@@ -145,14 +147,13 @@
 ## Association
 - belongs_to :item
 
-# delivery table
+# deliveries table
 |column|type|options|
 |------|----|-------|
 |method|string|null: false|
-|item_id|references :item|foreign_key: true, null: false|
 
 ## Association
-- belongs_to :item
+- has_many :items
 
 
 # categories table
@@ -172,25 +173,15 @@
 |column|type|options|
 |------|----|-------|
 |name|string|index: true|
-|item_id|references :item|foreign_key: true, index: true|
 
 ## Association
-- belongs_to :item
+- has_many :items
 
 # sizes table
 |column|type|options|
 |------|----|-------|
 |size|string|null: false|
 |item_id|references :item|foreign_key: true, null :false|
-
-## Association
-- belongs_to :item
-
-# statuses table
-|column|type|options|
-|------|----|-------|
-|status|string|null: false|
-|item_id|references :item|foreign_key: true, null: false|
 
 ## Association
 - belongs_to :item
