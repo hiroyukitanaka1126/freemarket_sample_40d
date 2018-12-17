@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth, if production?
+  before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
 
   private
 
-  def production
+  def production?
     Rails.env.production?
   end
 
@@ -13,5 +13,4 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
-
 end
