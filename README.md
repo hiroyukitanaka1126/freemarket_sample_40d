@@ -83,8 +83,6 @@
 |description|text|null: false|
 |price|string|null: false|
 |sale_proceed|references :sale_proceed|foreign_key: true, null: false|
-|buyer_id|integer|null: false|
-|seller_id|integer|null: false|
 |likes_count|integer||
 
 ## Association
@@ -112,9 +110,9 @@
 # deals table
 |column|type|options|
 |------|----|-------|
-|item_id|||
-|seller_id|||
-|buyer_id|||
+|item_id|references: item|foreign_key: true|
+|seller_id|references: user|foreign_key: true|
+|buyer_id|references: user|foreign_key: true|
 
 ## Association
 - belongs_to :seller, class_name: "User"
