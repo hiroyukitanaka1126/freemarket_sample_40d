@@ -17,6 +17,9 @@
 - has_many :sale_proceeds
 - has_many :points
 - has_many :comments
+- has_many :deals, foreign_key: :seller_id
+- has_many :deals_of_seller, class_name: "Deal", foreign_key: "seller_id"
+- has_many :deals_of_buyer, class_name: "Deal", foreign_key: "buyer_id"
 
 
 # municipalities table
@@ -34,7 +37,7 @@
 # prefectures table
 |column|type|options|
 |------|----|-------|
-|name|string|null: false|
+|name|integer :status|default: 0, null: false, limit: 46, index: true|
 |user_id|references :user|foreign_key: true, null: false|
 |item_id|references :item|foreign_key: true, null: false|
 
@@ -96,8 +99,27 @@
 - has_many :sizes
 - has_many :statuses
 - has_many :images
+- has_many :deals
+- has_many :sellers, through: :deals
+- has_many :buyers, through: :deals
+- has_many :deals_of_seller, class_name: "Deal", foreign_key: "seller_id"
+- has_many :deals_of_buyer, class_name: "Deal", foreign_key: "buyer_id"
+- has_many :items_of_seller, through: :deals_of_seller, source: "item"
+- has_many :items_of_buyer, through: :deals_of_buyer, source: "item"
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
+
+# deals table
+|column|type|options|
+|------|----|-------|
+|item_id|||
+|seller_id|||
+|buyer_id|||
+
+## Association
+- belongs_to :seller, class_name: "User"
+- belongs_to :buyer, class_name: "User"
+- belongs_to :item
 
 # images table
 |column|type|options|
