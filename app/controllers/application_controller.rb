@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+=begin
 before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
 
@@ -14,5 +14,5 @@ before_action :basic_auth, if: :production?
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
-
+=end
 end
