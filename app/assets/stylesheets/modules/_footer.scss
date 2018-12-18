@@ -52,7 +52,63 @@
     }
   }
 }
-.footer{
+
+.global-footer{
   background-color: $black;
-  height: 260px;
+  height: 600px;
+  color: $white;
+  padding: 60px 0;
+  text-align: center;
+  nav{
+    width:700px;
+    margin:0 auto;
+    ul{
+      list-style: none;
+    }
+  }
+}
+
+.footer{
+  margin:0;
+  padding:0;
+}
+
+.footer-cell{
+  display: inline-block;
+  vertical-align: top;
+  margin:0 5px 0 0;
+  width:23%;
+}
+
+.footer-head{
+  font-size: 16px;
+  margin:0;
+}
+
+.footer-cell__list{
+  line-height: 20px;
+  margin:0;
+  padding-left:0;
+  li{
+    width :100%;
+    margin-top:10px;
+    font-size: 14px;
+  }
+}
+
+.footer-logo{
+  margin:40px 0 0;
+}
+
+.footer-copyright{
+  margin: 2px 0 0;
+}
+
+small{
+  font-size: 14px;
+}
+
+.list{
+  text-decoration: none;
+  color: $white;
 }
