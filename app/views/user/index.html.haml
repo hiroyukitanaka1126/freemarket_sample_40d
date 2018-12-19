@@ -3,6 +3,12 @@
 
 .main-user-page
   .user_container
+    .user_contents
+      / = render "user/logout"
+      = render "user/profile"
+      / = render "user/card"
+      / = render "user/identification"
+
     .mypage--side_bar
       .mypage--side_bar--menu
         %ul.mypage--side_bar--list
@@ -105,11 +111,6 @@
               ログアウト
               = fa_icon 'chevron-right', class: 'icon'
 
-    .user_contents
-      / = render "user/logout"
-      / = render "user/profile"
-      / = render "user/card"
-      / = render "user/identification"
 
 
 
