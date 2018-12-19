@@ -3,6 +3,26 @@ body{
   padding: 0;
   color: $black;
 }
+
+.btn-login{
+  background-color: $mercari_red;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid $mercari_red;
+  border-radius: 4px;
+  padding: 5px 5px;
+  text-decoration: none;
+  }
+
+.btn-signup{
+  color: $link_blue;
+  font-size: 14px;
+  border: 1px solid $link_blue;
+  border-radius: 4px;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+
 .header-form{
   height: 90px;
 
