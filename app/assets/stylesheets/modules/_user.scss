@@ -3,7 +3,7 @@
   .user_container {
     margin: 40px 89.5px 0;
     display: inline-block;
-    // サイドバーに関するCSS
+      // サイドバーに関するCSS
     .mypage--side_bar{
       float: left;
       width: 280px;
@@ -38,11 +38,12 @@
         font-size: 16px;
       }
     }
+      // マイページの右側全体に関するCSS
     .user_contents{
       float: right;
       width: 700px;
       background-color: white;
-  // ログアウトに関するcss読み込みできないか？
+      // ログアウトに関するcss(logout)
       .logout--container{
         height: 179px;
         .logout--form_tag {
@@ -64,7 +65,7 @@
           }
         }
       }
-      // プロフィールに関するcss
+      // プロフィールに関するcss(profile)
       .profile--container{
         h2.profile--header{
           padding: 8px 24px;
@@ -77,7 +78,6 @@
             padding: 72px 16px 24px;
             display: flex;
             justify-content: center;
-
             .profile--form--icon--image{
               float: left;
             }
@@ -111,35 +111,50 @@
           }
         }
       }
-      //クレジット決済のCSS
+      // クレジット決済のCSS(card)
       .card-container{
-        h2.card-container-head{
+        h2.card--head{
           padding: 8px 24px;
           text-align: center;
           margin: 0 auto;
           border-bottom-style: solid; border-width: 1px;
           border-color: #f5f5f5;
         }
-        .card-container-content{
+        .card--content{
           border: 1px;
           padding: 64px;
-          .card-container-content--list{
-            margin: 0 126px;
-            .card-container-content--content{
-              list-style: none;
+          height: 174px;
+          .card--information--list{
+            text-align: center;
+          }
+          section.add-card--information{
+              padding: 24px 0 ;
               border-bottom-style: solid; border-width: 1px;
               border-color: #f5f5f5;
+            .add-card--content {
+              margin: 0 126px;
+              background-color: red;
+              width:320px;
+              color: white;
+              .add-card--button{
+                padding: 1px;
+                height: 48px;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
             }
           }
-          .card-container-content--help{
+          .card--content--help{
             text-align: right;
             font-size: 14px;
-            a.card-container-content--help--link{
+            a.card--content--help--link{
             }
           }
         }
       }
-      // 本人確認ページのCSS
+      // 本人確認ページのCSS(identification)
       .identification-container{
         h2.identification__header{
           padding: 8px 24px;
