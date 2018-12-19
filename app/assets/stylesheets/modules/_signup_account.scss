@@ -1,0 +1,76 @@
+.single-container__signup-account{
+  background-color: $light_gray;
+  padding: 0 0 20px;
+  margin: 0px;
+  display: block;
+  .user-signup-form{
+    height: 128px;
+    text-align: center;
+    display: block;
+    .user-signup-form__logo{
+      margin-top: 40px;
+      display: inline-block;
+    }
+  }
+  .signup-account__main{
+    display: block;
+    .signup-account-box{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      .signup-account-box__header{
+        padding: 32px 16px;
+        line-height: 1.5;
+        text-align: center;
+        margin: 0;
+      }
+      .signup-account-box__inner{
+        padding: 64px;
+        border-top: 1px solid $light_gray;
+        .signup-account-box__inner-content{
+          max-width: 320px;
+          margin: 0 auto;
+          .btn-default{
+            background: #eee;
+            position: relative;
+            color: #000;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid transparent;
+            .fa-envelope:before{
+              color: #ccc;
+              font-size: 16px;
+              position: absolute;
+              left: 30px;
+            }
+          }
+          .btn-default.btn-signup-facebook{
+            background: #385185;
+            color: #fff;
+            margin-top: 16px;
+            .fa-facebook-square:before{
+              color: #fff;
+              font-size: 16px;
+              position: absolute;
+              left: 30px;
+            }
+          }
+          .btn-default.btn-signup-google{
+            background: #dc4e41;
+            color: #fff;
+            margin-top: 16px;
+            .fa-google:before{
+              color: #fff;
+              font-size: 16px;
+              position: absolute;
+              left: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

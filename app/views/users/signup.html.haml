@@ -1,0 +1,21 @@
+.single-container__signup-account
+  %header.user-signup-form
+    .user-signup-form__logo
+      = link_to image_tag('mercari_logo.svg', alt: 'mercari', width: '185', height: '49'), root_path
+  .signup-account__main
+    .signup-account-box
+      %h2.signup-account-box__header
+        新規会員登録
+      .signup-account-box__inner
+        .signup-account-box__inner-content
+          = link_to new_user_registration_path, :class => 'btn-default' do
+            %i.fa.signup-envelope.fa-envelope
+              メールアドレスで登録
+          = link_to new_user_registration_path, :class => 'btn-default btn-signup-facebook' do
+            %i.fa.fa-facebook-square
+              Facebookで登録
+          = link_to new_user_registration_path, :class => 'btn-default btn-signup-google' do
+            %i.fa.fa-google
+              Googleで登録
+= render 'layouts/footer-gray'
+
