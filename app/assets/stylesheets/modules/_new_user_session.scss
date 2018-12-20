@@ -1,0 +1,80 @@
+.single-container__login{
+  background-color: $light-gray;
+  padding-bottom: 30px;
+  margin: 0;
+  display: block;
+}
+
+.user-login-form{
+  height: 128px;
+  text-align: center;
+  display: block;
+  .user-login-form__logo{
+    margin-top: 40px;
+    display: inline-block;
+  }
+}
+
+.login-btn{
+  background-color: $mercari_red;
+  color: #fff;
+  border: 1px solid $mercari_red;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  margin: 24px 0 0;
+}
+
+.user-login-form__main{
+  display: block;
+  .login-box{
+    width: 456px;
+    max-width: none;
+    margin: 0 auto;
+    background-color: #fff;
+    .login-box__no-account{
+      padding: 40px 64px;
+      text-align: center;
+      font-size: 14px;
+      .signup-box{
+        display: block;
+        margin: 8px 0 0;
+        background: $link_blue;
+        border: 1px solid $link_blue;
+        color: #fff;
+        line-height: 40px;
+        text-decoration: none;
+      }
+    }
+    .login-box__sns-account{
+      border-top: 1px solid $light-gray;
+      padding: 40px 64px;
+      text-align: center;
+      font-size: 14px;
+      #facebook-login{
+        display: block;
+        margin: 8px 0 0;
+        background: #385185;
+        border: 1px solid #385185;
+        color: #fff;
+        line-height: 40px;
+        width: 100%;
+      }
+      #google-login{
+        display: block;
+        margin: 8px 0 0;
+        background: #dc4e41;
+        color: #fff;
+        line-height: 40px;
+        width: 100%;
+        margin: 16px 0 0;
+        border: 1px solid #dc4e41;
+      }
+    }
+    .login-box__inner{
+      padding: 0 64px 40px;
+      text-align: center;
+    }
+  }
+}

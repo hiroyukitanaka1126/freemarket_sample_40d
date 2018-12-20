@@ -15,5 +15,93 @@
             = link_to image_tag('google-play.svg', width: '133', height: '68'), 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja'
     .inner-msg__image
       = image_tag('/images/phone_pic.png', width: '300', height: '262')
-.footer
-/footerの表示範囲がウィンドウサイズによって変わるが実装方法がわからないのでとりあえずheight: 260pxで仮置き/
+/footerの表示範囲がウィンドウサイズによって変わるが実装方法がわからないのでとりあえずheight: 600pxで仮置き/
+%footer.global-footer
+  %nav
+    %ul.footer
+      %li.footer-cell
+        %h3.footer-head
+          メルカリについて
+        %ul.footer-cell__list
+          %li
+            会社概要(運営会社)
+          %li
+            プライバシーポリシー
+          %li
+            メルカリ利用規約
+          %li
+            メルカリ利用規約・有償ポイントに関する規約
+          %li
+            あんしんスマホサポート制度に関する利用特約
+          %li
+            コンプライアンスポリシー
+          %li
+            個人データの安全管理に係る基本方針
+          %li
+            特定商取引に関する表記
+          %li
+            資金決済法に基づく表示
+          %li
+            法令順守と犯罪抑止のために
+          %li
+            採用情報
+      %li.footer-cell
+        %h3.footer-head
+          メルカリを見る
+        %ul.footer-cell__list
+          %li
+            =link_to "カテゴリー一覧",'https://www.mercari.com/jp/category/', class: 'list'
+          %li
+            =link_to "ブランド一覧",'https://www.mercari.com/jp/brand/', class: 'list'
+          %li
+            =link_to "出品地域一覧",'https://www.mercari.com/jp/area/', class: 'list'
+          %li
+            公式ブログ
+          %li
+            公式Twitter
+          %li
+            公式Fadebook
+      %li.footer-cell
+        %h3.footer-head
+          ヘルプ＆ガイド
+        %ul.footer-cell__list
+          %li
+            メルカリガイド
+          %li
+            メルカリロゴ利用ガイドライン
+          %li
+            お知らせ
+          %li
+            らくらくメルカリ便とは
+          %li
+            ゆうゆうメルカリ便とは
+          %li
+            大型らくらくメルカリ便とは
+          %li
+            車体取引ガイド
+          %li
+            返品・返金ポリシー
+          %li
+            メルカリあんしん・あんぜん宣言!
+          %li
+            偽ブランド品撲滅への取り組み
+          %li
+            メルカリボックス
+      %li.footer-cell
+        %h3.footer-head
+          国
+        %ul.footer-cell__list
+          %li
+            = link_to image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?1880749609', alt: 'mercari', width: '22' ) 
+            United States
+          %li
+            = link_to image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?1880749609', alt: 'mercari', width: '22' ) 
+            United Kingdom
+          %li
+            = link_to image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?1880749609', alt: 'mercari', width: '22' ) 
+            日本
+  .footer-logo
+    = link_to image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?3410070962', alt: 'mercari', width: '124', height: '33'), root_path
+    %p.footer-copyright
+    %small
+      © 2018 Mercari

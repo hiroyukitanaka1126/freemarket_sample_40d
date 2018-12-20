@@ -35,11 +35,32 @@
               %span.form-require
                 必須
               %select
+                %option ---
+                %option レディース
+                %option メンズ
+                %option ベビー・キッズ
+                %option インテリア・住まい・小物
+                %option 本・音楽・ゲーム
+                %option おもちゃ・ホビー・グッズ
+                %option コスメ・香水・美容
+                %option 家電・スマホ・カメラ
+                %option スポーツ・レジャー
+                %option ハンドメイド
+                %option チケット
+                %option 自動車・オートバイ
+                %option その他
               %h3.details-status
                 商品の状態
               %span.form-require
                 必須
               %select
+                %option ---
+                %option 新品、未使用
+                %option 未使用に近い
+                %option 目立った傷や汚れなし
+                %option やや傷や汚れあり
+                %option 傷や汚れあり
+                %option 全体的に状態が悪い
           .sell-items-shipping
             %h3.sub-head
               配送について
@@ -49,26 +70,98 @@
               %span.form-require
                 必須
               %select
+                %option ---
+                %option 送料込み(出品者負担)
+                %option 着払い(購入者負担)
               %h3.shipping-cost
                 発送元の地域
               %span.form-require
                 必須
               %select
+                %option ---
+                %option 北海道
+                %option 青森県
+                %option 岩手県
+                %option 宮城県
+                %option 秋田県
+                %option 山形県
+                %option 福島県
+                %option 茨城県
+                %option 栃木県
+                %option 群馬県
+                %option 埼玉県
+                %option 千葉県
+                %option 東京都
+                %option 神奈川県
+                %option 新潟県
+                %option 富山県
+                %option 石川県
+                %option 福井県
+                %option 山梨県
+                %option 長野県
+                %option 岐阜県
+                %option 静岡県
+                %option 愛知県
+                %option 三重県
+                %option 滋賀県
+                %option 京都府
+                %option 大阪府
+                %option 兵庫県
+                %option 奈良県
+                %option 和歌山県
+                %option 鳥取県
+                %option 島根県
+                %option 岡山県
+                %option 広島県
+                %option 山口県
+                %option 徳島県
+                %option 香川県
+                %option 愛媛県
+                %option 高知県
+                %option 福岡県
+                %option 佐賀県
+                %option 長崎県
+                %option 熊本県
+                %option 大分県
+                %option 宮崎県
+                %option 鹿児島県
+                %option 沖縄県
+                %option 未定
               %h3.shipping-cost
                 発送までの日数
               %span.form-require
                 必須
               %select
+                %option ---
+                %option 1~2日で発送
+                %option 2~3日で発送
+                %option 4~7日で発送
           .sell-items-price
             %h3.sub-head
               販売価格(300~9,999,999)
-            .price-box
-              %h3.price
-                価格
-              %span.form-require
-                必須
+            .price-form
+              %ul.price-form-list
+                %li.price-form-list__sell
+                  .price-form-list__sell-box
+                    %h3.price
+                      価格
+                    %span.form-require
+                      必須
+                    .sell-box__price-input
+                      ¥
+                      %input.sell-price-input
+                %li.price-form-list__sell
+                  .price-form-list__commission-percentage
+                    販売手数料(10%)
+                    -#右側部分後で実装
+                %li.price-form-list__bottom
+                  .price-form-list__sale-profit
+                    販売利益
+                    -#右側部分は後で実装
+
           .sell-items-btn
             %button{type: 'submit', class: 'sell_btn'}
               出品する
             %button{class: 'return'}
               もどる
+  = render 'layouts/footer-gray'
