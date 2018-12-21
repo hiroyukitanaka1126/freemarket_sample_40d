@@ -17,19 +17,19 @@
               %span.form-require
                 必須
               %br/
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-default'
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-default', placeholder: 'PC・携帯どちらでも可'
             .field.form-group
               = f.label :パスワード
               %span.form-require
                 必須
-              = f.password_field :password, autocomplete: "new-password", class: 'input-default'
+              = f.password_field :password, autocomplete: "new-password", class: 'input-default', placeholder: '6文字以上'
             .field.form-group
               = f.label :パスワード
               (確認)
               %span.form-require
                 必須
               %br/
-              = f.password_field :password_confirmation, autocomplete: "new-password", class: 'input-default'
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: 'input-default', placeholder: '6文字以上'
             .actions
               = f.submit "次へ進む", class: 'btn-default'
 = render 'layouts/footer-gray'
