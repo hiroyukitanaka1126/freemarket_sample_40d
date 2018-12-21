@@ -11,7 +11,7 @@
           = link_to new_user_registration_path, :class => 'btn-default' do
             %i.fa.signup-envelope.fa-envelope
               メールアドレスで登録
-          = link_to new_user_registration_path, :class => 'btn-default btn-signup-facebook' do
+          = link_to user_facebook_omniauth_authorize_path, :class => 'btn-default btn-signup-facebook' do
             %i.fa.fa-facebook-square
               Facebookで登録
           = link_to new_user_registration_path, :class => 'btn-default btn-signup-google' do
