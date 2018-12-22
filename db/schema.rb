@@ -12,16 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20181222023728) do
 
-  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                     null: false
-    t.text     "description",    limit: 65535,             null: false
-    t.string   "price",                                    null: false
-    t.integer  "delivery_dates",               default: 0
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.index ["name"], name: "index_items_on_name", using: :btree
-ActiveRecord::Schema.define(version: 20181217085037) do
-
   create_table "installs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -32,6 +22,15 @@ ActiveRecord::Schema.define(version: 20181217085037) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_installs_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                      null: false
+    t.text     "description", limit: 65535, null: false
+    t.string   "price",                     null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["name"], name: "index_items_on_name", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
