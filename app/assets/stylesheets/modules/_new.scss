@@ -144,18 +144,35 @@ select{
           }
         }
       }
+      // 価格に関するCSS
       .sell-items-price{
         padding: 40px;
         min-height: 300px;
         border-bottom: 1px solid #ccc;
 
-        .price-box{
+        .price-form{
           float: right;
           width: 400px;
-          .price{
+          ul.price-form-list{
+            width: 400px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
             display: inline-block;
             font-weight: 600;
-            font-size: 14px;
+            li.price-form-list__sell{
+              padding: 0 0 24px 0;
+            }
+            li.price-form-list__sell-tax{
+              padding: 24px 0;
+            }
+            li.price-form-list__bottom{
+              padding: 24px 0;
+            }
+          }
+          ul.has-error-text{
+
           }
         }
       }
