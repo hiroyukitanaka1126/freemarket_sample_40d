@@ -7,10 +7,18 @@ class Item < ApplicationRecord
   def show_error_message_item(item)
     if item.length == 0
       "入力してください"
-    elsif item.length > 1000
-      "1000文字以下で入力してください"
     elsif item.length > 40
       "40文字以下で入力してください"
+    else
+      ""
+    end
+  end
+
+  def show_error_message_idescription(item)
+    if item.length == 0
+      "入力してください"
+    elsif item.length > 1000
+      "1000文字以下で入力してください"
     else
       ""
     end
