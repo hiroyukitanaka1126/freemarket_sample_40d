@@ -1,9 +1,15 @@
 = render 'layouts/header_form'
 .main-contents
   .slideshow
-    when you add slide show here, plz remove 'border: solid;' from /stylesheets/modules/_index.scss.
-    %br
-    and also erase this message from /views/items/_index.html.haml.
+    %ul.bxslider
+      %li
+        %img{:src => "https://i2.wp.com/panaapp.net/web/wp-content/uploads/2018/08/mercari.png?fit=1200%2C630&ssl=1", height:'500', style: 'object-fit: cover;'}/
+      %li
+        %img{:src => "//www-mercari-jp.akamaized.net/assets/img/promotion/jp/201812_new_register/main-img.svg?3085886043", width:'100',height: '350', style: 'object-fit: contain;' }/
+      %li
+        %img{:src => "https://mercari-special.jp/assets/img/img_gallery_2_1.jpg", width: '400',height:'400', style: 'object-fit: cover;'}/
+      %li
+        %img{:src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?3085886043", width: '100',height:'400', style: 'object-fit: contain;'}/
   .main-contents-pickup-category
     %h2
       ピックアップカテゴリー

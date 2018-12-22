@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
+
+  devise_for :users,
+  path: '',
+  path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
+  controllers: {omniauth_callbacks: 'omniauth_callbacks'}
+
   root 'items#index'
+
   resources :items do
     member do
       get :confirm
+    end
+  end
+
+  resources :users do
+    collection do
+      get :signup
     end
   end
 end

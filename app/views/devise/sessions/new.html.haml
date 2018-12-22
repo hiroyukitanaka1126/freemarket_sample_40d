@@ -1,0 +1,26 @@
+.single-container__login
+  %header.user-login-form
+    .user-login-form__logo
+      = link_to image_tag('mercari_logo.svg', alt: 'mercari', width: '185', height: '49'), root_path
+  .user-login-form__main
+    .login-box
+      .login-box__no-account
+        %p
+          アカウントをお持ちでない方はこちら
+          = link_to '新規会員登録', new_user_registration_path, :class => 'signup-box'
+      .login-box__sns-account
+        %button#facebook-login
+          ここにfacebookログイン機能
+        %button#google-login
+          ここにGoogleログイン機能
+      .login-box__inner
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-default', placeholder: 'メールアドレス'
+          .field
+            %br/
+            = f.password_field :password, autocomplete: "current-password", class: 'input-default', placeholder: 'パスワード'
+          .actions
+            = f.submit "ログイン", class: 'login-btn'
+= render 'layouts/footer-gray'

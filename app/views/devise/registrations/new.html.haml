@@ -1,0 +1,35 @@
+.single-container
+  %header.new-user-form
+    .new-user-form__logo
+      = link_to image_tag('mercari_logo.svg', alt: 'mercari', width: '185', height: '49'), root_path
+      -#progress barは未実装
+    %nav.progress-bar-signup
+  .new-user-form__main
+    .new-user-container
+      %h2.new-user-container__header
+        会員情報入力
+      .new-user-registration-form
+        .new-user-registration-form__inner
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            .field.form-group
+              = f.label :メールアドレス
+              %span.form-require
+                必須
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-default', placeholder: 'PC・携帯どちらでも可'
+            .field.form-group
+              = f.label :パスワード
+              %span.form-require
+                必須
+              = f.password_field :password, autocomplete: "new-password", class: 'input-default', placeholder: '6文字以上'
+            .field.form-group
+              = f.label :パスワード
+              (確認)
+              %span.form-require
+                必須
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: 'input-default', placeholder: '6文字以上'
+            .actions
+              = f.submit "次へ進む", class: 'btn-default'
+= render 'layouts/footer-gray'
