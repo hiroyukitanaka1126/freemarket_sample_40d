@@ -2,9 +2,18 @@ class Item < ApplicationRecord
   validates :name, presence: true, length: { maximum: 40 }      # 「40文字以下」
   validates :description, presence: true, length: { maximum: 1000 }
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300 }
-# numericality: :only_integer
-
+  # priceバリデーション可能であれば、正規表現を用いて表現する
+  validates :image, presence: true
   mount_uploader :image, ImageUploader
+
+# show_error_message_imageメソッド（画像送信）において適切なバリデーションが出るように後で編集すること
+  def show_error_message_image(item)
+    if item == nil
+      "不備があります"
+    else
+      ""
+    end
+  end
 
   def show_error_message_item(item)
     if item.length == 0

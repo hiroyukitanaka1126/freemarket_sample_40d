@@ -15,6 +15,12 @@
               必須
             .file-field
               クリックしてファイルをアップロード
+            = f.label class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+            - if @item.errors.any?
+              %ul.has-error-text
+                = @item.show_error_message_image(@item[:image])
           .sell-item-description
             %h3.sell-item-description__name
               商品名
