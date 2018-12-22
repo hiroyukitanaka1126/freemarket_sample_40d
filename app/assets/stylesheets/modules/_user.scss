@@ -5,7 +5,7 @@
     display: inline-block;
       // サイドバーに関するCSS
     .mypage--side_bar{
-      float: left;
+      display: inline-block;
       width: 280px;
       margin: 0 40px 0 0;
       ul.mypage--side_bar--list{
