@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :signup
+      get :logout_confirmation
     end
   end
 end
