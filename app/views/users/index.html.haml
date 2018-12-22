@@ -1,116 +1,101 @@
 = render 'layouts/header_form'
-パンくず
+
 
 .main-user-page
   .user_container
     .user_contents
       / = render "users/logout"
-      = render "users/profile"
+      / = render "users/profile"
       / = render "users/card"
       / = render "users/identification"
+    =render "layouts/sidebar"
+    .l-container
+      .mypage-user-icon
+        %a 
+          %figure
+            = image_tag('https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png', width: '60', height: '60')
+          %h2.bold ニックネーム
+          .mypage-number
+            %div
+              評価
+              %span.bold
+                0
+            %div
+              出品数
+              %span.bold
+                0
+      .mypage-tab-container-notification-todo
+        %ul.mypage-tabs#tab-list
+          %li.mypage-tabs-left
+            %input#all{:checked => "checked", :name => "tab_item", :type => "radio"}
+            %label.tab_item{:for => "all"} お知らせ
+          %li.mypage-tabs-right
+            %input#all{:checked => "checked", :name => "tab_item", :type => "radio"}
+            %label.tab_item{:for => "all"} やることリスト
+        .tab-content
+          %ul.mypage-item-list
+            %li
+              .mypage-item-link
+                %figure
+                  = image_tag('https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png', width: '50', height: '50')
+                .mypage-item-body
+                  .mypage-item-text
+                    事務局から個別メッセージ「【P300プレゼント】WEB限定！新規会員登録キャンペーン」
+                  %time
+                    %i.fa.fa-clock-o
+                    %span 1時間前
+                = fa_icon 'chevron-right', class: 'icon-arrow-right'
+            %li
+              .mypage-item-link
+                %figure
+                  = image_tag('https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png', width: '50', height: '50')
+                .mypage-item-body
+                  .mypage-item-text
+                    期間限定のお得情報】2018年話題になった賞品をプレゼント！キャンペーン詳細はこちら
+                  %time
+                    %i.fa.fa-clock-o
+                    %span 1時間前
+                = fa_icon 'chevron-right', class: 'icon-arrow-right'
+            %li
+              .mypage-item-link
+                %figure
+                  = image_tag('https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png', width: '50', height: '50')
+                .mypage-item-body
+                  .mypage-item-text
+                    事務局から個別メッセージ「【年末大感謝祭】いまお買い物すると、抽選で豪華賞品プレゼントGETできます！」
+                  %time
+                    %i.fa.fa-clock-o
+                    %span 1時間前
+                = fa_icon 'chevron-right', class: 'icon-arrow-right'
+            %li
+              .mypage-item-link
+                %figure
+                  = image_tag('https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png', width: '50', height: '50')
+                .mypage-item-body
+                  .mypage-item-text
+                  【今年の新機能をまとめてご紹介♪】メルカリは1年間でこんなに便利になりました！
+                  %time
+                    %i.fa.fa-clock-o
+                    %span 1時間前
+                = fa_icon 'chevron-right', class: 'icon-arrow-right'
+            %li
+              .mypage-go-list
+                =link_to("一覧を見る",'')
 
-    .mypage--side_bar
-      .mypage--side_bar--menu
-        %ul.mypage--side_bar--list
-          %li
-            %a.mypage--nav-list--item
-              マイページ
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              お知らせ
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              やることリスト
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              いいね！一覧
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              出品する
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              出品した商品・出品中
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              出品した商品・取引中
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              出品した商品・売却済み
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              購入した商品・取引中
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              購入した商品・過去の取引
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              ニュース一覧
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              評価一覧
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              ガイド
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              お問い合わせ
-              = fa_icon 'chevron-right', class: 'icon'
-        %h3.mypage--side_bar--head
-          売上・ポイント
-        %ul.mypage--side_bar--list
-          %li
-            %a.mypage--nav-list--item
-              売上・振込申請
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              ポイント
-              = fa_icon 'chevron-right', class: 'icon'
-        %h3.mypage--side_bar--head
-          設定
-        %ul.mypage--side_bar--list
-          %li
-            %a.mypage--nav-list--item
-              プロフィール
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              住所変更
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              支払い方法
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              メール/パスワード
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              本人情報
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              電話番号の確認
-              = fa_icon 'chevron-right', class: 'icon'
-          %li
-            %a.mypage--nav-list--item
-              ログアウト
-              = fa_icon 'chevron-right', class: 'icon'
-
+      .mypage-tab-container
+        %h2.mypage-tab-head 
+          購入した商品
+        %ul.mypage-tabs
+          %li.mypage-tabs-left
+            %input#all{:checked => "checked", :name => "tab_item", :type => "radio"}
+            %label.tab_item{:for => "all"} 取引中
+          %li.mypage-tabs-right
+            %input#all{:checked => "checked", :name => "tab_item", :type => "radio"}
+            %label.tab_item{:for => "all"} 過去の取引
+        .tab-content
+          %ul.mypage-item-list.tab-pane.active
+            %li.mypage-item-not-found.bold#trading 取引中の商品がありません
+    
 
 
 
