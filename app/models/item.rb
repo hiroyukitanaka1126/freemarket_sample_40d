@@ -4,6 +4,8 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300 }
 # numericality: :only_integer
 
+  mount_uploader :image, ImageUploader
+
   def show_error_message_item(item)
     if item.length == 0
       "入力してください"
