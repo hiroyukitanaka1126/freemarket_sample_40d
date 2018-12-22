@@ -7,7 +7,7 @@
       .sell-container
         %h2.sell-container__header
           商品の情報を入力
-        %form.sell-form
+        = form_for @item do |f|
           .sell-upload-box
             %h3.sell-upload-head
               出品画像
@@ -20,12 +20,13 @@
               商品名
             %span.form-require
               必須
-            %input.item-name
+            = f.text_field :name, class: "item-name"
+            / %input.item-name
             %h3.sell-item-description__main
               商品の説明
             %span.form-require
               必須
-            %textarea.description
+            = f.text_area :description, class: "description"
           .sell-item-details
             %h3.sub-head
               商品の詳細
@@ -68,7 +69,6 @@
               %span.form-require
                 必須
           .sell-items-btn
-            %button{type: 'submit', class: 'sell_btn'}
-              出品する
+            = f.submit class: "sell_btn", value: "出品する"
             %button{class: 'return'}
               もどる
