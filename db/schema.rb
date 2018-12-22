@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20181222091736) do
 
   create_table "installs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -23,6 +24,9 @@ ActiveRecord::Schema.define(version: 20181222091736) do
     t.index ["email"], name: "index_installs_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true, using: :btree
   end
+=======
+ActiveRecord::Schema.define(version: 20181222090245) do
+>>>>>>> koyablue/master
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                      null: false
@@ -42,6 +46,16 @@ ActiveRecord::Schema.define(version: 20181222091736) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "nickname"
+    t.string   "first_name",                          null: false
+    t.string   "last_name",                           null: false
+    t.string   "postal_code"
+    t.string   "prefecture",                          null: false
+    t.string   "municipality",                        null: false
+    t.string   "phone_number"
+    t.string   "address"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
