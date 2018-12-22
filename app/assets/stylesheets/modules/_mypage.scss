@@ -1,0 +1,125 @@
+.l-container{
+  width:700px;
+  float:right;
+}
+.mypage-user-icon{
+  position:relative;
+  height:200px;
+  background-image: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?40116333);
+  figure{
+    overflow: hidden;
+    width:60px;
+    height:60px;
+    margin:0 auto;
+    border-radius:50%;
+  }
+}
+h2.bold{
+  text-align: center;
+  font-size: 14px
+}
+.mypage-user-icon a{
+  display: block;
+  margin:0 auto;
+  width:100%;
+  padding-top: 5%;
+}
+.mypage-number{
+  margin:8px 0 0;
+  text-align: center;
+  div{
+    display: inline-block;
+    font-size:14px;
+  }
+}
+
+.mypage-tabs{
+  margin:0;
+  padding:0;
+  li{
+    width:50%;
+    float: left;
+    text-align:center;
+    vertical-align: top;
+    ul .mypage-tabs{
+      display: inline-block;
+    }
+  }
+}
+.mypage-tab-container{
+  background-color: $white;
+  margin:40px 0 0 ;
+}
+.mypage-tab-container-notification-todo{
+  background-color: $white;
+}
+.active{
+  background-color:$white;
+}
+.mypage-item-list{
+  margin:0;
+  padding:0;
+  li{
+    border-bottom:1px solid #eee;
+    width:100%;
+    background-color:$white;
+    position:relative;
+  }
+}
+.mypage-item-link{
+  padding:16px;
+  figure{
+    float:left;
+  }
+}
+.mypage-item-body{
+  margin-top:8px;
+}
+.mypage-tabs-right{
+  background-color: #eee;
+}
+.icon-arrow-right{
+  top:50%;
+  position:absolute;
+  right:16px;
+}
+.mypage-go-list{
+  background-color:$white;
+  border:none;
+  padding:15px;
+  a{
+    display: block;
+    height:56px;
+    margin:0 auto;
+    background-color: #eee;
+    line-height: 56px;
+    text-align:center;
+    text-decoration: none;
+  }
+}
+
+.mypage-tab-head{
+  background-color: $white;
+  font-size:16px;
+  line-height: 72px;
+  padding:0 16px;
+}
+.mypage-tabs li{
+  text-align: center;
+  min-height:60px;
+}
+.mypage-item-not-found{
+  padding:160px 0 60px;
+  background-image: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?40116333);
+  background-size:78px,85px;
+  background-repeat:no-repeat;
+  background-position:center;
+  text-align: center;
+}
+.tab_item{
+  font-size:18px;
+  line-height: 50px;
+}
+input[name="tab_item"]{
+  display:none;
+}
