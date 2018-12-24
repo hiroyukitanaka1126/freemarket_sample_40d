@@ -1,5 +1,10 @@
-.logout--container
-  .logout--form_tag
-    .logout--content
-      .logout--button
-        ログアウト
+= render 'layouts/header_form'
+.main-user-page
+  .user_container
+    =render "layouts/sidebar"
+    .logout--container
+      .logout--form_tag
+        .logout--content
+          .logout--button
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout--button--text'
+= render 'layouts/footer'
