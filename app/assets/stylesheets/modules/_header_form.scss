@@ -58,13 +58,13 @@ body{
       margin-top: 8px;
       .nav-left{
         float: left;
-        ul{
+        .nav-left__search{
           display: inline;
           list-style: none;
           font-size: 14px;
           font-weight: 400;
           padding: 0px;
-          li{
+          .nav-left__search-dropdown{
             display: inline-block;
             margin-right: 8px;
           }
@@ -86,3 +86,13 @@ body{
       }
     }
   }
+.test{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+  li{
+    display: list-item;
+  }
+}
