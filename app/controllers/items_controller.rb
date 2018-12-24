@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @header_categories = Category.select("name").where(ancestry: nil)
   end
 
   def new

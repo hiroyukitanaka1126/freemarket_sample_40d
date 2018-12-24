@@ -11,13 +11,7 @@
         %ul.nav-left__search
           %li.nav-left__search-dropdown
             カテゴリーから探す
-            %ul.test
-              %li
-                テスト
-              %li
-                テスト
-              %li
-                テスト
+            = render partial: 'categories/index', locals: {header_categories: @header_categories}
           %li.nav-left__search-dropdown
             ブランドから探す
       .nav-right

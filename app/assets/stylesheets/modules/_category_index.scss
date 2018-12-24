@@ -1,0 +1,14 @@
+.test{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+  top: 90px;
+  li{
+    display: list-item;
+    font-weight: 400;
+    background-color: $light_gray;
+    line-height: 44px;
+  }
+}
