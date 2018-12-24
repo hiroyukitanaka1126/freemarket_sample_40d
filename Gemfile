@@ -69,6 +69,8 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'devise'
 gem 'gretel'
+gem 'pry-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'ancestry'
+
