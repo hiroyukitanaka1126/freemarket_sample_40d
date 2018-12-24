@@ -18,6 +18,21 @@
         %a{href: ''}
           %h3
             メンズ 新着アイテム
+  .items-box-container
+    .items-box-content
+      - @items.each do |item|
+        .items-box
+          %a{href:''}
+            %figure.items-box-photo
+              = image_tag item.image.url ,class: 'item-box__content__image1'
+            / %img{src:'item.image'}
+            .items-box-body
+              .items-box-namefont
+                = item.name
+            .items-box-price
+              .items-box-price-font
+                = "¥" + item.price
+                %p.items-box-tax
   .main-contents-pickup-brand
     %h2
       ピックアップブランド
