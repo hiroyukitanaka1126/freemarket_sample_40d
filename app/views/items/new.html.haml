@@ -7,7 +7,7 @@
       .sell-container
         %h2.sell-container__header
           商品の情報を入力
-        %form.sell-form
+        = form_for @item do |f|
           .sell-upload-box
             %h3.sell-upload-head
               出品画像
@@ -15,17 +15,29 @@
               必須
             .file-field
               クリックしてファイルをアップロード
+            = f.label class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+            - if @item.errors.any?
+              %ul.has-error-text
+                = @item.show_error_message_image(@item[:image])
           .sell-item-description
             %h3.sell-item-description__name
               商品名
             %span.form-require
               必須
-            %input.item-name
+            = f.text_field :name, class: "item-name", placeholder: "商品名（必須 40文字まで)"
+            - if @item.errors.any?
+              %ul.has-error-text
+                = @item.show_error_message_item(@item[:name])
             %h3.sell-item-description__main
               商品の説明
             %span.form-require
               必須
-            %textarea.description
+            = f.text_area :description, class: "description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            - if @item.errors.any?
+              %ul.has-error-text
+                = @item.show_error_message_idescription(@item[:description])
           .sell-item-details
             %h3.sub-head
               商品の詳細
@@ -149,7 +161,11 @@
                       必須
                     .sell-box__price-input
                       ¥
-                      %input.sell-price-input
+                      = f.text_field :price, class: "sell-price-input", placeholder: "例）300"
+                  - if @item.errors.any?
+                    %ul.has-error-text
+                      = @item.show_error_message_price(@item[:price])
+                      / %input.sell-price-input
                 %li.price-form-list__sell
                   .price-form-list__commission-percentage
                     販売手数料(10%)
@@ -158,10 +174,11 @@
                   .price-form-list__sale-profit
                     販売利益
                     -#右側部分は後で実装
-
           .sell-items-btn
             %button{type: 'submit', class: 'sell_btn'}
               出品する
             %button{class: 'return'}
               もどる
-  = render 'layouts/footer-gray'
+
+  / = render 'layouts/footer-gray'
+
