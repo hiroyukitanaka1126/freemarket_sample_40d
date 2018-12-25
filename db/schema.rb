@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20181225061237) do
 
-ActiveRecord::Schema.define(version: 20181222090245) do
   create_table "installs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -31,7 +31,9 @@ ActiveRecord::Schema.define(version: 20181222090245) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.string   "image"
+    t.integer  "user_id"
     t.index ["name"], name: "index_items_on_name", using: :btree
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,9 +44,6 @@ ActiveRecord::Schema.define(version: 20181222090245) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "uid"
-    t.string   "provider"
-    t.string   "nickname"
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
     t.string   "postal_code"
@@ -56,4 +55,5 @@ ActiveRecord::Schema.define(version: 20181222090245) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "items", "users"
 end

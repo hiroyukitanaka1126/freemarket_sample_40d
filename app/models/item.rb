@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  belongs_to :user
   validates :name, presence: true, length: { maximum: 40 }      # 「40文字以下」
   validates :description, presence: true, length: { maximum: 1000 }
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300 }
