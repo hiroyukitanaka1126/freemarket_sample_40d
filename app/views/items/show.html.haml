@@ -3,10 +3,10 @@
 .wrapper
   .item-box-container
     %h1.item-name
-      商品の名前
+      = @item.name
     .item-main-content
       .item-photo
-        商品の写真
+        = image_tag @item.image.url, class: 'lower-message__image' if @item.image.present?
       %table.item-detail-table
         %tbody
           %tr
@@ -37,14 +37,15 @@
             %th 発送日の目安
             %td 1-2/2-3/4-7
   .item-price-container
-    %span.item-price ¥ 8,500
+    %span.item-price
+      = number_to_currency(@item[:price], :precision => 0, :unit => "￥")
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
   .item-buy-container
     %button.item-buy-btn 購入画面に進む
   .item-description-container
     %p.item-description-inner
-      ここに商品の説明文ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ改行テストあああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+      = @item.description
   .items-in-user-profile-container
     %h2
       = link_to '<ここに出品者の名前>さんのその他の出品'
