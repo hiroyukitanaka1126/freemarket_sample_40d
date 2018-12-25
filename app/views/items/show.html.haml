@@ -6,7 +6,7 @@
       = @item.name
     .item-main-content
       .item-photo
-        = image_tag @item.image.url, class: 'lower-message__image' if @item.image.present?
+        = image_tag @item.image.url, size:'300x495'
       %table.item-detail-table
         %tbody
           %tr
