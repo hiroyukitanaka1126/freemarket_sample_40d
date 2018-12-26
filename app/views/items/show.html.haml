@@ -41,17 +41,19 @@
       = number_to_currency(@item[:price], precision: 0, unit: "￥")
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
-  .item-buy-container
-    %button.item-buy-btn 購入画面に進む
   .item-description-container
     %p.item-description-inner
       = @item.description
   .items-in-user-profile-container
-    %h2
-      = link_to '<ここに出品者の名前>さんのその他の出品'
-    renderで貼り付け
-  .items-in-category-container
-    %h2
-      =link_to '<ここに同じカテゴリー名> その他の商品'
-    renderで貼り付け
+    .item-buy-container
+      %button.item-buy-btn-red
+        商品の編集
+    .item-buy-container
+      or
+    .item-buy-container
+      %button.item-buy-btn-gray
+        出品を停止する
+    .item-buy-container
+      %button.item-buy-btn-gray
+        この商品を削除する
 = render 'layouts/footer'
