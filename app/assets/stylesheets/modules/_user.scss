@@ -257,6 +257,66 @@
           }
         }
       }
+      // 商品詳細ページ
+      .items-show-container{
+        h2.items-show-head{
+          background-color: #F1F1F1;
+          font-size:16px;
+          line-height: 72px;
+          padding:0 16px;
+          margin: 0;
+        }
+        ul.items-show-tabs{
+          padding: 0;
+          margin: 0;
+          li.items-show-tab-exhibition{
+            text-align: center;
+            min-width: 32%;
+            min-height: 72px;
+          }
+          li.items-show-tab{
+            float: right;
+            background-color: #eee;
+            text-align: center;
+            min-width: 32%;
+            min-height: 72px;
+          }
+        }
+        // 出品中商品一覧
+        .items-show-list{
+          .items-show-list.active-content-all{
+            .items-show-list.active-content--block{
+              border-bottom: 1px solid #eee;
+              position: relative;
+              width:100%;
+              height: 80px;
+              a.items-show-list.active-content{
+                padding: 16px;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .items-show-content-image{
+                  float: left;
+                  width: 48px;
+                  height: 48px;
+                }
+                .items-show-content-name{
+                  float: left;
+                  margin: 0 50px 0 20px;
+                  height: 48px;
+                  width: 500px;
+                }
+                .items-show-content-icon{
+                  float: left;
+                  margin-top: 10px;
+                  height: 48px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
