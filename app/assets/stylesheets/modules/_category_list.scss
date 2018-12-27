@@ -1,0 +1,22 @@
+.nav-left__search-dropdown:hover .category_list_root{
+  display: block;
+}
+
+.category_list_root{
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+  /*top: 90px;*/
+  li{
+    display: list-item;
+    font-weight: 400;
+    background-color: $light_gray;
+    line-height: 44px;
+  }
+  .category_list_children{
+    list-style: none;
+  }
+}
