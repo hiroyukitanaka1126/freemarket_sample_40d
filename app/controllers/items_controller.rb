@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def index
 
-    @header_categories = Category.where(ancestry: nil)
+    @categories = Category.where(ancestry: nil)
     @items = Item.order("created_at DESC")
 
   end
