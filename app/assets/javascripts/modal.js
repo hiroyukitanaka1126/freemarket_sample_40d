@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
 
   $("#modal-open").click(function(){
     $(this).blur();
