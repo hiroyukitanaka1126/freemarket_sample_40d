@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
 
   def index
-    @header_categories = Category.select("name").where(ancestry: nil)
+    @header_categories = Category.where(ancestry: nil)
   end
 
   def new
-    @item = Item.new
+    if user_signed_in?
+      @item = Item.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -27,7 +31,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image)
+    params.require(:item).permit(:name, :description, :price, :image, :category_id)
   end
 
 end

@@ -1,4 +1,161 @@
-%ul.test
-  - header_categories.each do |category1|
-    %li
-      = category1.name
+.category-container
+  .category-box-root
+    .category-header
+      レディース
+      .category-details
+        = link_to 'すべて'
+        %br
+        .cat-box
+          %h4
+            トップス
+          %br
+          - categories = Category.first.children.first.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            アウター
+          %br
+          - categories = Category.first.children.second.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            ボトムス
+          %br
+          - categories = Category.first.children.third.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            靴
+          %br
+          - categories = Category.first.children.fourth.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            カバン
+          %br
+          - categories = Category.first.children.fifth.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            その他
+          %br
+            .category
+              = link_to "#{Category.first.children[5].name}"
+    .category-header
+      メンズ
+      .category-details
+        = link_to 'すべて'
+        %br
+        .cat-box
+          %h4
+            トップス
+          %br
+          - categories = Category.second.children.first.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            アウター
+          %br
+          - categories = Category.second.children.second.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            ボトムス
+          %br
+          - categories = Category.second.children.third.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            靴
+          %br
+          - categories = Category.second.children.fourth.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            カバン
+          %br
+          - categories = Category.second.children.fifth.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            その他
+          %br
+            .category
+              = link_to "#{Category.second.children[5].name}"
+    .category-header
+      キッズ
+      .category-details
+        = link_to 'すべて'
+        %br
+        .cat-box
+          - categories = Category.third.children
+          -categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+    .category-header
+      電化製品
+      .category-details
+        = link_to  'すべて'
+        %br
+        .cat-box
+          %h4
+            PC
+          %br
+          - categories = Category.fourth.children.first.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            カメラ
+          %br
+          - categories = Category.fourth.children.second.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            家電
+          %br
+          - categories = Category.fourth.children.third.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            ゲーム
+          %br
+          - categories = Category.fourth.children.fourth.children
+          - categories.each do |category|
+            .category
+              = link_to "#{category.name}"
+        .cat-box
+          %h4
+            その他
+          %br
+            .category
+              = link_to "#{Category.fourth.children.fifth.name}"
+    .category-header
+      その他
+      .category-details
+        = link_to  'すべて'
