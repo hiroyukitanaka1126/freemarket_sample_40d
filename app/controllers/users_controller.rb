@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   def signup
   end
 
+  def items_show
+  end
+
   def logout_confirmation
   end
 

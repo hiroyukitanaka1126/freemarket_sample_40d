@@ -74,15 +74,30 @@
     font-size: 16px;
   }
 }
-
-.item-description-container{
-  padding: 32px 20px 40px;
+.item-buy-container{
+  padding: 32px 20px 0;
   background: $white;
   margin: auto;
   width: 740px;
-  p.item-description-inner{
-    margin: 0;
+
+  .item-buy-btn{
+    background: $mercari_red;
+    color: $white;
+    margin: auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    display: block;
+    height: 56px;
+    width: 740px;
+    border: 1px solid $mercari_red;
   }
+}
+.item-description-container{
+  padding: 32px 20px 0;
+  background: $white;
+  margin: auto;
+  width: 740px;
 }
 .items-in-user-profile-container{
   width: 700px;
@@ -102,39 +117,5 @@
   h2 a{
     text-decoration: none;
     color: $link_blue;
-  }
-}
-
-.items-in-user-profile-container{
-  margin: 24px auto;
-  background: $white;
-  width: 700px;
-  padding: 10px 40px;
-  .item-buy-container{
-    background: $white;
-    margin: 10px 0;
-    text-align: center;
-    .item-buy-btn-red{
-      background: $mercari_red;
-      color: $white;
-      margin: auto;
-      font-weight: 600;
-      font-size: 12px;
-      display: block;
-      height: 40px;
-      width: 100%;
-      border: 1px solid $mercari_red;
-    }
-    .item-buy-btn-gray{
-      background: gray;
-      color: $white;
-      margin: auto;
-      font-weight: 600;
-      font-size: 12px;
-      display: block;
-      height: 40px;
-      width: 100%;
-      border: 1px solid gray;
-    }
   }
 }

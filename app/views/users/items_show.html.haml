@@ -1,0 +1,35 @@
+= render 'layouts/header_form'
+.main-user-page
+  .user_container
+    .user_contents
+      .items-show-container
+        %h2.items-show-head
+          出品した商品
+        %ul.items-show-tabs
+          %li.items-show-tab-exhibition
+            %h3
+              出品中
+          %li.items-show-tab
+            %h3
+              売却済み
+          %li.items-show-tab
+            %h3
+              取引中
+        .items-show-list
+          - if current_user.items.ids.empty?
+            %ul.mypage-item-list.tab-pane.active
+              %li.mypage-item-not-found.bold#trading
+                取引中の商品がありません
+          - else
+            .items-show-list.active-content-all
+              - current_user.items.each do |item|
+                .items-show-list.active-content--block
+                  %a.items-show-list.active-content{href: "/items/#{item.id}"}
+                    .items-show-content-image
+                      = image_tag item.image, size:'48x48'
+                    .items-show-content-name
+                      = item.name
+                    .items-show-content-icon
+                      = fa_icon 'chevron-right', class: 'icon'
+    =render "layouts/sidebar"
+= render 'layouts/footer'
