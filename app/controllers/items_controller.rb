@@ -1,11 +1,18 @@
 class ItemsController < ApplicationController
 
   def index
+
+    @header_categories = Category.where(ancestry: nil)
     @items = Item.order("created_at DESC")
+
   end
 
   def new
-    @item = Item.new
+    if user_signed_in?
+      @item = Item.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -28,7 +35,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :image, :category_id).merge(user_id: current_user.id)
   end
 
 end

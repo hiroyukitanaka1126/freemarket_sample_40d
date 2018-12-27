@@ -1,0 +1,32 @@
+.category a{
+  color: $link_blue;
+  text-decoration: none;
+}
+
+.category-container{
+  display: block;
+  /*background-color: $light_gray;*/
+  .category-box-root{
+    width: 700px;
+    margin: 0 auto;
+    display: block;
+    .category-header{
+      background-color: $mercari_red;
+      color: $white;
+      /*font-weight: 600;*/
+      font-size: 14px;
+    }
+    .category-details{
+      background-color: $white;
+      .cat-box{
+        display: inline-table;
+        color: black;
+        /*float: left;*/
+        margin-right: 15px;
+        h4{
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}

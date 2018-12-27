@@ -20,6 +20,8 @@ Rails.application.routes.draw do
       get :logout_confirmation
     end
   end
+
+  resources :categories
 end
 
 #購入確認画面の表示のためconfirmを追加。itemのid拾うと思われるのでmemberで一旦書いてみる
