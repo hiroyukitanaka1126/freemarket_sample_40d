@@ -16,7 +16,7 @@ mens_tops, mens_outer, mens_bottoms, mens_shoes, mens_bag, mens_other = mens.chi
 
 mens_tshirt, mens_shirt, mens_cutsew, mens_other_tops = mens_tops.children.create([{name: "Tシャツ"}, {name: "シャツ"}, {name: "カットソー"}, {name: "その他"}])
 
-mens_down, mens_leather_jkt, mens_tailored, mens_denim_jkt, mens_other_outer = mens_other.children.create([{name: "ダウン"}, {name: "レザー"}, {name: "テーラード"}, {name: "デニム"}, {name: "その他"}])
+mens_down, mens_leather_jkt, mens_tailored, mens_denim_jkt, mens_other_outer = mens_outer.children.create([{name: "ダウン"}, {name: "レザー"}, {name: "テーラード"}, {name: "デニム"}, {name: "その他"}])
 
 mens_denim_btms, mens_chino, mens_shorts, mens_other_btms = mens_bottoms.children.create([{name: "デニム"}, {name: "チノ"}, {name: "短パン"}, {name: "その他"}])
 
