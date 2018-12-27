@@ -18,13 +18,13 @@
 }
 
 .button-link{
-  color:#00f;
-  text-decoration:underline;
+  color: black;
+  text-decoration: none;
 }
 
 .button-link:hover{
   cursor:pointer;
-  color:#f00;
+  color: $link_blue;
 }
 
 #modal-overlay{
