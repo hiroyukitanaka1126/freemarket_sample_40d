@@ -40,6 +40,7 @@ namespace :deploy do
           execute :bundle, :exec, :rake, 'db:seed'
         end
       end
+    end
   end
 
   desc 'upload secrets.yml'
