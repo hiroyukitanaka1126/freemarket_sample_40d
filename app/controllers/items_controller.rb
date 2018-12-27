@@ -1,7 +1,10 @@
 class ItemsController < ApplicationController
 
   def index
+
     @header_categories = Category.where(ancestry: nil)
+    @items = Item.order("created_at DESC")
+
   end
 
   def new
@@ -22,6 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def confirm
