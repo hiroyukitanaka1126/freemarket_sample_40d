@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     member do
       get :confirm
     end
+    collection do
+      get :search
+    end
   end
 
   resources :users do

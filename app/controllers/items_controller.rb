@@ -29,6 +29,10 @@ class ItemsController < ApplicationController
     #購入確認画面表示のためのアクション
   end
 
+  def search
+    @items = Item.where('name LIKE?', "%#{params[:search]}%")
+  end
+
 private
 
   def item_params
