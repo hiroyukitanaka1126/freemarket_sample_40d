@@ -5,10 +5,10 @@ require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
   if Rails.env.development? || Rails.env.test?
     config.storage = :file
-    config.fog_directory  = '40d-mercari'
   elsif Rails.env.production?
     config.storage = :fog
     config.fog_provider = 'fog/aws'
+    config.fog_directory = '40d-mercari'
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: Rails.application.secrets.aws_access_key_id,
