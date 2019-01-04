@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :confirm]
 
   def index
 
@@ -8,11 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    if user_signed_in?
-      @item = Item.new
-    else
-      redirect_to new_user_session_path
-    end
+    @item = Item.new
   end
 
   def create
@@ -35,7 +32,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image, :category_id).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :image).merge(user_id: current_user.id)
   end
 
 end
