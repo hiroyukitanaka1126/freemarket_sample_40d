@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :confirm
+      get :user_buy_screen
     end
     collection do
       get :search
