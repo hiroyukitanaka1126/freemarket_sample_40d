@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     collection do
       get :signup
       get :items_show
+      get :profile
+      get :card
+      get :identification
       get :logout_confirmation
     end
   end
