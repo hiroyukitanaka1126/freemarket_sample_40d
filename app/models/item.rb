@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   # priceバリデーション可能であれば、正規表現を用いて表現する
   validates :image, presence: true
   mount_uploader :image, ImageUploader
+  accepts_nested_attributes_for :item_categories
 
 # show_error_message_imageメソッド（画像送信）において適切なバリデーションが出るように後で編集すること
   def show_error_message_image(item)
