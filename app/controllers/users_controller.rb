@@ -9,6 +9,15 @@ class UsersController < ApplicationController
   def items_show
   end
 
+  def profile
+  end
+
+  def card
+  end
+
+  def identification
+  end
+
   def logout_confirmation
   end
 

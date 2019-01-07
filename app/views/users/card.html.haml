@@ -1,0 +1,20 @@
+= render 'layouts/header_form'
+.main-user-page
+  .user_container
+    =render "layouts/sidebar"
+    .user_contents
+      .card-container
+        %h2.card--head
+          支払い方法
+        .card--content
+          .card--information--list
+            クレジットカード一覧
+          %section.add-card--information
+            .add-card--content
+              .add-card--button
+                クレジットカードを追加する
+          .card--content--help
+            %a.card--content--help--link
+              支払い方法について
+              = fa_icon 'chevron-right', class: 'icon'
+= render 'layouts/footer'

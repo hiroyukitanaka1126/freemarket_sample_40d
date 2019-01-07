@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   def index
 
     @categories = Category.where(ancestry: nil)
-    @items = Item.order("created_at DESC")
+    @items = Item.order("created_at DESC").limit(4)
 
   end
 
@@ -31,6 +31,10 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.where('name LIKE?', "%#{params[:search]}%")
+  end
+
+  def user_buy_screen
+    @item = Item.find(params[:id])
   end
 
 private

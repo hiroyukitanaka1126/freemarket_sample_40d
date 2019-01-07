@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :confirm
+      get :user_buy_screen
     end
     collection do
       get :search
@@ -20,6 +21,9 @@ Rails.application.routes.draw do
     collection do
       get :signup
       get :items_show
+      get :profile
+      get :card
+      get :identification
       get :logout_confirmation
     end
   end
