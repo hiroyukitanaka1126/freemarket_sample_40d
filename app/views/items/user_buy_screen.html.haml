@@ -43,6 +43,8 @@
     %span.item-shipping-fee 送料込み
   .item-buy-container
     %button.item-buy-btn 購入画面に進む
+  = form_tag(action: :pay_jp, method: :post) do
+    %script.payjp-button{"data-key": "#{ENV["PAYJP_PUBLIC_KEY"]}", src: "https://checkout.pay.jp", type: "text/javascript"}
   .item-description-container
     %p.item-description-inner
       = @item.description
