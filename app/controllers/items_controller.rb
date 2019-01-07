@@ -38,6 +38,19 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def pay_jp
+    item = Item.find(params[:id])
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp::Charge.create(currency: "jpy", amount: item[:price], card: params["payjp-token"])
+    pay_jp_item_buyer_id_update(item)
+    redirect_to root_path, notice: "支払いが完了しました"
+  end
+
+  def pay_jp_item_buyer_id_update(item)
+    item.update( buyer_id: current_user.id)
+  end
+
+
 private
 
   def item_params
