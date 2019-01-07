@@ -80,7 +80,7 @@
   margin: auto;
   width: 740px;
 
-  .item-buy-btn{
+  .item-buy-btn-red{
     background: $mercari_red;
     color: $white;
     margin: auto;
@@ -91,6 +91,18 @@
     height: 56px;
     width: 740px;
     border: 1px solid $mercari_red;
+  }
+  .item-buy-btn-gray{
+    background: gray;
+    color: $white;
+    margin: auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    display: block;
+    height: 56px;
+    width: 740px;
+    border: 1px solid gray;
   }
 }
 .item-description-container{
