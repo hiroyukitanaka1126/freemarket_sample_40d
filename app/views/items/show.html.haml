@@ -46,7 +46,7 @@
       = @item.description
   .items-in-user-profile-container
     .item-buy-container
-      %button.item-buy-btn-red
+      %button.item-buy-btn-red{onclick: "location.href='/items/#{@item.id}/edit'",}
         商品の編集
     .item-buy-container
       or

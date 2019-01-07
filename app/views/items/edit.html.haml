@@ -1,0 +1,174 @@
+.wrapper
+  %header
+    %h1
+      = link_to image_tag('mercari_logo.svg', alt: 'mercari', width: '185', height: '49'), root_path
+  .main
+    .main-sell-item-container
+      .sell-container
+        %h2.sell-container__header
+          商品の情報を入力
+        = form_for @item do |f|
+          .sell-upload-box
+            %h3.sell-upload-head
+              出品画像
+            %span.form-require
+              必須
+            .file-field
+              クリックしてファイルをアップロード
+            = f.label class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+            - if @item.errors.any?
+              %ul.has-error-text
+                = @item.show_error_message_image(@item[:image])
+          .sell-item-description
+            %h3.sell-item-description__name
+              商品名
+            %span.form-require
+              必須
+            = f.text_field :name, class: "item-name", placeholder: "商品名（必須 40文字まで)"
+            - if @item.errors.any?
+              %ul.has-error-text
+                = @item.show_error_message_item(@item[:name])
+            %h3.sell-item-description__main
+              商品の説明
+            %span.form-require
+              必須
+            = f.text_area :description, class: "description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            - if @item.errors.any?
+              %ul.has-error-text
+                = @item.show_error_message_idescription(@item[:description])
+          .sell-item-details
+            %h3.sub-head
+              商品の詳細
+            .details-box
+              %h3.details-category
+                カテゴリー
+              %span.form-require
+                必須
+              %select
+                %option ---
+                %option レディース
+                %option メンズ
+                %option キッズ
+                %option 電化製品
+                %option その他
+              %h3.details-status
+                商品の状態
+              %span.form-require
+                必須
+              %select
+                %option ---
+                %option 新品、未使用
+                %option 未使用に近い
+                %option 目立った傷や汚れなし
+                %option やや傷や汚れあり
+                %option 傷や汚れあり
+                %option 全体的に状態が悪い
+          .sell-items-shipping
+            %h3.sub-head
+              配送について
+            .shipping-box
+              %h3.shipping-cost
+                配送料の負担
+              %span.form-require
+                必須
+              %select
+                %option ---
+                %option 送料込み(出品者負担)
+                %option 着払い(購入者負担)
+              %h3.shipping-cost
+                発送元の地域
+              %span.form-require
+                必須
+              %select
+                %option ---
+                %option 北海道
+                %option 青森県
+                %option 岩手県
+                %option 宮城県
+                %option 秋田県
+                %option 山形県
+                %option 福島県
+                %option 茨城県
+                %option 栃木県
+                %option 群馬県
+                %option 埼玉県
+                %option 千葉県
+                %option 東京都
+                %option 神奈川県
+                %option 新潟県
+                %option 富山県
+                %option 石川県
+                %option 福井県
+                %option 山梨県
+                %option 長野県
+                %option 岐阜県
+                %option 静岡県
+                %option 愛知県
+                %option 三重県
+                %option 滋賀県
+                %option 京都府
+                %option 大阪府
+                %option 兵庫県
+                %option 奈良県
+                %option 和歌山県
+                %option 鳥取県
+                %option 島根県
+                %option 岡山県
+                %option 広島県
+                %option 山口県
+                %option 徳島県
+                %option 香川県
+                %option 愛媛県
+                %option 高知県
+                %option 福岡県
+                %option 佐賀県
+                %option 長崎県
+                %option 熊本県
+                %option 大分県
+                %option 宮崎県
+                %option 鹿児島県
+                %option 沖縄県
+                %option 未定
+              %h3.shipping-cost
+                発送までの日数
+              %span.form-require
+                必須
+              %select
+                %option ---
+                %option 1~2日で発送
+                %option 2~3日で発送
+                %option 4~7日で発送
+          .sell-items-price
+            %h3.sub-head
+              販売価格(300~9,999,999)
+            .price-form
+              %ul.price-form-list
+                %li.price-form-list__sell
+                  .price-form-list__sell-box
+                    %h3.price
+                      価格
+                    %span.form-require
+                      必須
+                    .sell-box__price-input
+                      ¥
+                      = f.text_field :price, class: "sell-price-input", placeholder: "例）300"
+                  - if @item.errors.any?
+                    %ul.has-error-text
+                      = @item.show_error_message_price(@item[:price])
+                      / %input.sell-price-input
+                %li.price-form-list__sell
+                  .price-form-list__commission-percentage
+                    販売手数料(10%)
+                    -#右側部分後で実装
+                %li.price-form-list__bottom
+                  .price-form-list__sale-profit
+                    販売利益
+                    -#右側部分は後で実装
+          .sell-items-btn
+            = f.submit :"変更する", class: 'sell_btn'
+            %button{class: 'return', onclick: "history.back()", type: "button"}
+              もどる
+
+  / = render 'layouts/footer-gray'
