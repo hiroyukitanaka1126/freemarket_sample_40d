@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     member do
       get :confirm
       get :user_buy_screen
-      post :pay_jp
     end
     collection do
       get :search

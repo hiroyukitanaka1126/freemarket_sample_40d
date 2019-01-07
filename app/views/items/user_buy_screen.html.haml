@@ -5,8 +5,6 @@
     %h1.item-name
       = @item.name
     .item-main-content
-      - if @item.buyer_id != nil
-        .item-photo-sold
       .item-photo
         = image_tag @item.image, size:'300x300'
       %table.item-detail-table
@@ -44,14 +42,7 @@
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
   .item-buy-container
-    - if @item.buyer_id == nil
-      -if @item.user_id != current_user.id
-        %button.item-buy-btn-red
-          = form_tag(action: :pay_jp, method: :post) do
-            %script.payjp-button{"data-key": "#{ENV["PAYJP_PUBLIC_KEY"]}", src: "https://checkout.pay.jp", type: "text/javascript", "data-text": "購入する"}
-    - else
-      %button.item-buy-btn-gray 売り切れました
-
+    %button.item-buy-btn 購入画面に進む
   .item-description-container
     %p.item-description-inner
       = @item.description

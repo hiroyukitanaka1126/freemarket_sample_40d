@@ -1,7 +1,14 @@
 = render 'layouts/header_form'
+
+
 .main-user-page
   .user_container
     .user_contents
+      / = render "users/logout"
+      / = render "users/profile"
+      / = render "users/card"
+      / = render "users/identification"
+    =render "layouts/sidebar"
     .l-container
       .mypage-user-icon
         %a
@@ -88,7 +95,6 @@
         .tab-content
           %ul.mypage-item-list.tab-pane.active
             %li.mypage-item-not-found.bold#trading 取引中の商品がありません
-    =render "layouts/sidebar"
 
 
 
