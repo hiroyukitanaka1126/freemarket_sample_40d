@@ -22,7 +22,7 @@
     .items-box-content
       - @items.each do |item|
         .items-box
-          %a{href:''}
+          %a{ href: "/items/#{item.id}/user_buy_screen" }
             %figure.items-box-photo
               = image_tag item.image.url
             / %img{src:'item.image'}
