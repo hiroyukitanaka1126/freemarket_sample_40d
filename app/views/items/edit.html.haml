@@ -168,7 +168,7 @@
                     -#右側部分は後で実装
           .sell-items-btn
             = f.submit :"変更する", class: 'sell_btn'
-            %button{class: 'return'}
+            %button{class: 'return', onclick: "history.back()", type: "button"}
               もどる
 
   / = render 'layouts/footer-gray'
