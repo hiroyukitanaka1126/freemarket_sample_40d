@@ -1,13 +1,34 @@
 .items-box-container{
   margin: 0 auto;
 }
+
 .items-box{
   width:213px;
   margin:0 0 0 20px;
   background-color: $white;
   display:inline-block;
-  figure{
-    width:213px;
+  position: relative;
+  .item-photo-sold:before{
+    border-color: $mercari_red transparent transparent transparent;
+    border-style: solid;
+    border-width: 100px 100px 0 0;
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: 2;
+  }
+  .item-photo-sold:after {
+    color: #fff;
+    content: "SOLD";
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    transform: rotate(-45deg);
+    z-index: 3;
   }
 }
 .items-box a{
