@@ -5,8 +5,7 @@ class Item < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 40 }      # 「40文字以下」
   validates :description, presence: true, length: { maximum: 1000 }
-  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300 }
-  # priceバリデーション可能であれば、正規表現を用いて表現する
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300 }
   validates :image, presence: true
   mount_uploader :image, ImageUploader
   accepts_nested_attributes_for :item_categories
