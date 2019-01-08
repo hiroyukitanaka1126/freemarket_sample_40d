@@ -26,6 +26,12 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy if item.user_id == current_user.id
+    redirect_to "/users/items_show"
+  end
+
   def confirm
     #購入確認画面表示のためのアクション
   end
