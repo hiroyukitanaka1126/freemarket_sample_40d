@@ -73,4 +73,4 @@ gem 'pry-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'ancestry'
-
+gem 'payjp'

@@ -22,6 +22,8 @@
     .items-box-content
       - @items.each do |item|
         .items-box
+          - if item.buyer_id != nil
+            .item-photo-sold
           %a{ href: "/items/#{item.id}/user_buy_screen" }
             %figure.items-box-photo
               = image_tag item.image.url
