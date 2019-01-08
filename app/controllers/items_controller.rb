@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   def index
 
     @categories = Category.where(ancestry: nil)
-    @items = Item.order("created_at DESC").limit(4)
+    @items = Item.order("created_at DESC").page(params[:page]).per(12)
 
   end
 
