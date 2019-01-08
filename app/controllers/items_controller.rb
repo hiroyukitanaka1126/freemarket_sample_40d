@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :confirm]
+  before_action :authenticate_user!, only: [:new, :create, :confirm, :edit]
+  before_action :set_item_category, only: [:show, :user_buy_screen]
 
   def index
 
@@ -23,6 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+
+  end
+
+  def edit
     @item = Item.find(params[:id])
   end
 
@@ -30,6 +35,14 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy if item.user_id == current_user.id
     redirect_to "/users/items_show"
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.user_id == current_user.id
+      item.update(item_params)
+      redirect_to item_path
+    end
   end
 
   def confirm
@@ -41,23 +54,16 @@ class ItemsController < ApplicationController
   end
 
   def user_buy_screen
-    @item = Item.find(params[:id])
-  end
 
-  def pay_jp
-    item = Item.find(params[:id])
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    Payjp::Charge.create(currency: "jpy", amount: item[:price], card: params["payjp-token"])
-    pay_jp_item_buyer_id_update(item)
-    redirect_to root_path, notice: "支払いが完了しました"
   end
-
-  def pay_jp_item_buyer_id_update(item)
-    item.update( buyer_id: current_user.id)
-  end
-
 
 private
+
+  def set_item_category
+    @item = Item.find(params[:id])
+    @item_category = ItemCategory.select('category_id').find_by(item_id: params[:id])
+    @category = Category.find_by(id: @item_category.category_id)
+  end
 
   def item_params
     params.require(:item).permit(:name, :description, :price, :image, :item_categories_attributes => [:id, :category_id]).merge(user_id: current_user.id)

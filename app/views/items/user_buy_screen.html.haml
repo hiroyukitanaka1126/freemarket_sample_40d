@@ -5,18 +5,18 @@
     %h1.item-name
       = @item.name
     .item-main-content
-      - if @item.buyer_id != nil
-        .item-photo-sold
       .item-photo
         = image_tag @item.image, size:'300x300'
       %table.item-detail-table
         %tbody
           %tr
             %th 出品者
-            %td 出品者名
+            %td
+              = @item.user.nickname
           %tr
             %th カテゴリー
-            %td カテゴリー名
+            %td
+              = @category.name
           %tr
             %th ブランド
             %td ブランド名
@@ -51,7 +51,6 @@
             %script.payjp-button{"data-key": "#{ENV["PAYJP_PUBLIC_KEY"]}", src: "https://checkout.pay.jp", type: "text/javascript", "data-text": "購入する"}
     - else
       %button.item-buy-btn-gray 売り切れました
-
   .item-description-container
     %p.item-description-inner
       = @item.description

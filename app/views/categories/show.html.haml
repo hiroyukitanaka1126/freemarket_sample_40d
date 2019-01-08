@@ -1,1 +1,18 @@
-
+= render 'layouts/header_form'
+.main-contents
+  .items-box-container
+    .items-box-content
+      - @items.each do |item_category|
+        .items-box
+          = link_to item_path(item_category) do
+            %figure.items-box-photo
+              = image_tag item_category.image.url
+            .items-box-body
+              .items-box-namefont
+                = item_category.name
+            .items-box-price
+              .items-box-price-font
+                = "¥" + item_category.price
+                %p.items-box-tax
+= render 'layouts/sell_btn'
+= render 'layouts/footer'
