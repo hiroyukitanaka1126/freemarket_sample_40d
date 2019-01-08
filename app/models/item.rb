@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many :item_categories
+  has_many :item_categories, dependent: :destroy
   has_many :categories, through: :item_categories
 
   validates :name, presence: true, length: { maximum: 40 }      # 「40文字以下」
