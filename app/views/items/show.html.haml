@@ -11,10 +11,12 @@
         %tbody
           %tr
             %th 出品者
-            %td 出品者名
+            %td
+              = @item.user.nickname
           %tr
             %th カテゴリー
-            %td カテゴリー名
+            %td
+              = @category.name
           %tr
             %th ブランド
             %td ブランド名
@@ -46,7 +48,7 @@
       = @item.description
   .items-in-user-profile-container
     .item-buy-container
-      %button.item-buy-btn-red
+      %button.item-buy-btn-red{onclick: "location.href='/items/#{@item.id}/edit'",}
         商品の編集
     .item-buy-container
       or

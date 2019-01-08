@@ -1,6 +1,7 @@
 = render 'layouts/header_form'
 .main-user-page
   .user_container
+    =render "layouts/sidebar"
     .user_contents
       .identification-container
         %h2.identification__header
@@ -79,5 +80,4 @@
           .identification__help--link
             本人情報登録について
             = fa_icon 'chevron-right', class: 'icon'
-    =render "layouts/sidebar"
 = render 'layouts/footer'
