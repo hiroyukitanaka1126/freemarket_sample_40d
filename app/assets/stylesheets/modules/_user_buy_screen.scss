@@ -21,7 +21,29 @@
   .item-main-content{
     margin: 16px 0 0;
     display: flex;
-
+    position: relative;
+    .item-photo-sold:before{
+      border-color: $mercari_red transparent transparent transparent;
+      border-style: solid;
+      border-width: 100px 100px 0 0;
+      content: "";
+      height: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      z-index: 2;
+    }
+    .item-photo-sold:after {
+      color: #fff;
+      content: "SOLD";
+      font-size: 20px;
+      position: absolute;
+      top: 15px;
+      left: 8px;
+      transform: rotate(-45deg);
+      z-index: 3;
+    }
     .item-photo{
       min-width: 300px;
       max-width: 300px;
@@ -80,7 +102,7 @@
   margin: auto;
   width: 740px;
 
-  .item-buy-btn{
+  .item-buy-btn-red{
     background: $mercari_red;
     color: $white;
     margin: auto;
@@ -91,6 +113,18 @@
     height: 56px;
     width: 740px;
     border: 1px solid $mercari_red;
+  }
+  .item-buy-btn-gray{
+    background: gray;
+    color: $white;
+    margin: auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    display: block;
+    height: 56px;
+    width: 740px;
+    border: 1px solid gray;
   }
 }
 .item-description-container{
