@@ -64,6 +64,8 @@ class ItemsController < ApplicationController
     card: params['payjp-token'],
     currency: 'jpy'
     )
+    @item.buyer_id = current_user.id
+    @item.save
     redirect_to root_path
   end
 
