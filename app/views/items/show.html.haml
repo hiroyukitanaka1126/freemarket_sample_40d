@@ -44,7 +44,7 @@
     %span.item-shipping-fee 送料込み
   .item-description-container
     %p.item-description-inner
-      = @item.description
+      = simple_format @item.description
   .items-in-user-profile-container
     - if user_signed_in? && current_user.id == @item.user_id
       .item-buy-container

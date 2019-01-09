@@ -52,13 +52,5 @@
       %button.item-buy-btn-gray 売り切れました
   .item-description-container
     %p.item-description-inner
-      = @item.description
-  .items-in-user-profile-container
-    %h2
-      = link_to '<ここに出品者の名前>さんのその他の出品'
-    renderで貼り付け
-  .items-in-category-container
-    %h2
-      =link_to '<ここに同じカテゴリー名> その他の商品'
-    renderで貼り付け
+      = simple_format @item.description
 = render 'layouts/footer'
