@@ -57,6 +57,15 @@ class ItemsController < ApplicationController
 
   end
 
+  def pay_jp
+    Payjp.api_key = 'sk_test_67bf7b9b9f7b559259f8e304'
+    charge = Payjp::Charge.create(
+    amount: 300,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+  end
+
 private
 
   def set_item_category
