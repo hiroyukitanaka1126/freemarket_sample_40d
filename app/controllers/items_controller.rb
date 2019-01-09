@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :confirm, :edit]
-  before_action :set_item_category, only: [:show, :user_buy_screen]
+  before_action :set_item_category, only: [:show, :user_buy_screen, :pay_jp]
 
   def index
 
@@ -60,10 +60,11 @@ class ItemsController < ApplicationController
   def pay_jp
     Payjp.api_key = 'sk_test_67bf7b9b9f7b559259f8e304'
     charge = Payjp::Charge.create(
-    amount: 300,
+    amount: @item.price,
     card: params['payjp-token'],
     currency: 'jpy'
     )
+    redirect_to root_path
   end
 
 private
