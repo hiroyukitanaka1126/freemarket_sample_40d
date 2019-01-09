@@ -1,12 +1,11 @@
 = render 'layouts/header_form'
-= render 'layouts/bread_crumbs'
 .wrapper
   .item-box-container
     %h1.item-name
       = @item.name
     .item-main-content
       .item-photo
-        = image_tag @item.image, size:'300x300'
+        = image_tag @item.image, size:'300x375'
       %table.item-detail-table
         %tbody
           %tr
