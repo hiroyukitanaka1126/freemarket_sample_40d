@@ -22,7 +22,7 @@
                 取引中の商品がありません
           - else
             .items-show-list.active-content-all
-              - current_user.items.each do |item|
+              - current_user.items.order('created_at DESC').each do |item|
                 .items-show-list.active-content--block
                   %a.items-show-list.active-content{href: "/items/#{item.id}"}
                     .items-show-content-image
