@@ -10,6 +10,7 @@
             background-color: $mercari_red;
             border-radius: 2px;
             padding: 2px 4px;
+            margin-bottom: 5px;
             display: inline-block;
           }
 
@@ -74,6 +75,15 @@ select{
           border: 1px dashed #d8d8d8;
           text-align: center;
           line-height: 184px;
+          position:relative;
+          .hidden{
+            height:184px;
+            width:620px;
+            position:absolute;
+            right:0;
+            left:0;
+            opacity: 0;
+          }
         }
       }
       .sell-item-description{
