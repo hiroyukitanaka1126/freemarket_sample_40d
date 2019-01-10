@@ -69,15 +69,15 @@ select{
 
         .file-field{
           width: 620px;
-          height: 184px;
+          height: 100px;
           background-color: $light_gray;
           margin-top: 20px;
           border: 1px dashed #d8d8d8;
           text-align: center;
-          line-height: 184px;
+          line-height: 104px;
           position:relative;
           .hidden{
-            height:184px;
+            height:100px;
             width:620px;
             position:absolute;
             right:0;
