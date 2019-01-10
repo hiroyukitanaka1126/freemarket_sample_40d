@@ -89,7 +89,7 @@
           .sell-items-btn
             %button{type: 'submit', class: 'sell_btn'}
               出品する
-            %button{class: 'return'}
+            %button{type: 'button', class: 'return', onclick: 'history.back()'}
               もどる
 
   / = render 'layouts/footer-gray'
