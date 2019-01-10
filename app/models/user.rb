@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :prefecture, presence: true
+  validates :municipality, presence: true
+  validates :address, presence: true
+  validates :nickname, presence: true
+
   has_many :items
 
   def self.from_omniauth(auth)
